@@ -289,7 +289,7 @@ def procesar_video():
                     f"ID:{id_bache} {nombre_espanol}",
                     (x1, y1 - 10),
                     cv2.FONT_HERSHEY_SIMPLEX,
-                    0.5,
+                    2.5,
                     (0, 255, 0),
                     2
                 )

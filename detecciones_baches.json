@@ -8,7 +8,7 @@
         "nombre_archivo": "test1.MOV"
     },
     "total_baches_unicos": 96,
-    "fecha_procesamiento": "2026-03-09 13:37:02",
+    "fecha_procesamiento": "2026-03-09 14:48:08",
     "video_procesado": "test1.MOV",
     "detecciones": [
         {
@@ -22,7 +22,7 @@
             "frame": 69,
             "tiempo_segundos": 2.3,
             "tiempo_formato": "00:02",
-            "fecha_deteccion": "2026-03-09 13:35:18"
+            "fecha_deteccion": "2026-03-09 14:46:25"
         },
         {
             "id": 8,
@@ -35,7 +35,7 @@
             "frame": 90,
             "tiempo_segundos": 3.0,
             "tiempo_formato": "00:03",
-            "fecha_deteccion": "2026-03-09 13:35:20"
+            "fecha_deteccion": "2026-03-09 14:46:26"
         },
         {
             "id": 12,
@@ -48,7 +48,7 @@
             "frame": 101,
             "tiempo_segundos": 3.37,
             "tiempo_formato": "00:03",
-            "fecha_deteccion": "2026-03-09 13:35:21"
+            "fecha_deteccion": "2026-03-09 14:46:27"
         },
         {
             "id": 22,
@@ -61,7 +61,7 @@
             "frame": 116,
             "tiempo_segundos": 3.87,
             "tiempo_formato": "00:03",
-            "fecha_deteccion": "2026-03-09 13:35:22"
+            "fecha_deteccion": "2026-03-09 14:46:28"
         },
         {
             "id": 29,
@@ -74,7 +74,7 @@
             "frame": 120,
             "tiempo_segundos": 4.0,
             "tiempo_formato": "00:04",
-            "fecha_deteccion": "2026-03-09 13:35:22"
+            "fecha_deteccion": "2026-03-09 14:46:29"
         },
         {
             "id": 32,
@@ -87,7 +87,7 @@
             "frame": 127,
             "tiempo_segundos": 4.23,
             "tiempo_formato": "00:04",
-            "fecha_deteccion": "2026-03-09 13:35:23"
+            "fecha_deteccion": "2026-03-09 14:46:29"
         },
         {
             "id": 35,
@@ -100,7 +100,7 @@
             "frame": 131,
             "tiempo_segundos": 4.37,
             "tiempo_formato": "00:04",
-            "fecha_deteccion": "2026-03-09 13:35:23"
+            "fecha_deteccion": "2026-03-09 14:46:30"
         },
         {
             "id": 40,
@@ -113,7 +113,7 @@
             "frame": 143,
             "tiempo_segundos": 4.77,
             "tiempo_formato": "00:04",
-            "fecha_deteccion": "2026-03-09 13:35:24"
+            "fecha_deteccion": "2026-03-09 14:46:31"
         },
         {
             "id": 44,
@@ -126,7 +126,7 @@
             "frame": 153,
             "tiempo_segundos": 5.1,
             "tiempo_formato": "00:05",
-            "fecha_deteccion": "2026-03-09 13:35:25"
+            "fecha_deteccion": "2026-03-09 14:46:31"
         },
         {
             "id": 59,
@@ -139,7 +139,7 @@
             "frame": 186,
             "tiempo_segundos": 6.2,
             "tiempo_formato": "00:06",
-            "fecha_deteccion": "2026-03-09 13:35:28"
+            "fecha_deteccion": "2026-03-09 14:46:34"
         },
         {
             "id": 62,
@@ -152,7 +152,7 @@
             "frame": 189,
             "tiempo_segundos": 6.3,
             "tiempo_formato": "00:06",
-            "fecha_deteccion": "2026-03-09 13:35:28"
+            "fecha_deteccion": "2026-03-09 14:46:34"
         },
         {
             "id": 70,
@@ -165,7 +165,7 @@
             "frame": 200,
             "tiempo_segundos": 6.67,
             "tiempo_formato": "00:06",
-            "fecha_deteccion": "2026-03-09 13:35:29"
+            "fecha_deteccion": "2026-03-09 14:46:35"
         },
         {
             "id": 74,
@@ -178,7 +178,7 @@
             "frame": 204,
             "tiempo_segundos": 6.8,
             "tiempo_formato": "00:06",
-            "fecha_deteccion": "2026-03-09 13:35:29"
+            "fecha_deteccion": "2026-03-09 14:46:36"
         },
         {
             "id": 77,
@@ -191,7 +191,7 @@
             "frame": 211,
             "tiempo_segundos": 7.03,
             "tiempo_formato": "00:07",
-            "fecha_deteccion": "2026-03-09 13:35:30"
+            "fecha_deteccion": "2026-03-09 14:46:36"
         },
         {
             "id": 79,
@@ -204,7 +204,7 @@
             "frame": 218,
             "tiempo_segundos": 7.27,
             "tiempo_formato": "00:07",
-            "fecha_deteccion": "2026-03-09 13:35:30"
+            "fecha_deteccion": "2026-03-09 14:46:37"
         },
         {
             "id": 81,
@@ -217,7 +217,7 @@
             "frame": 221,
             "tiempo_segundos": 7.37,
             "tiempo_formato": "00:07",
-            "fecha_deteccion": "2026-03-09 13:35:30"
+            "fecha_deteccion": "2026-03-09 14:46:37"
         },
         {
             "id": 89,
@@ -230,7 +230,7 @@
             "frame": 236,
             "tiempo_segundos": 7.87,
             "tiempo_formato": "00:07",
-            "fecha_deteccion": "2026-03-09 13:35:32"
+            "fecha_deteccion": "2026-03-09 14:46:38"
         },
         {
             "id": 91,
@@ -243,7 +243,7 @@
             "frame": 247,
             "tiempo_segundos": 8.23,
             "tiempo_formato": "00:08",
-            "fecha_deteccion": "2026-03-09 13:35:33"
+            "fecha_deteccion": "2026-03-09 14:46:39"
         },
         {
             "id": 114,
@@ -256,7 +256,7 @@
             "frame": 316,
             "tiempo_segundos": 10.53,
             "tiempo_formato": "00:10",
-            "fecha_deteccion": "2026-03-09 13:35:38"
+            "fecha_deteccion": "2026-03-09 14:46:45"
         },
         {
             "id": 122,
@@ -269,7 +269,7 @@
             "frame": 376,
             "tiempo_segundos": 12.53,
             "tiempo_formato": "00:12",
-            "fecha_deteccion": "2026-03-09 13:35:43"
+            "fecha_deteccion": "2026-03-09 14:46:50"
         },
         {
             "id": 130,
@@ -282,7 +282,7 @@
             "frame": 396,
             "tiempo_segundos": 13.2,
             "tiempo_formato": "00:13",
-            "fecha_deteccion": "2026-03-09 13:35:45"
+            "fecha_deteccion": "2026-03-09 14:46:51"
         },
         {
             "id": 145,
@@ -295,7 +295,7 @@
             "frame": 466,
             "tiempo_segundos": 15.53,
             "tiempo_formato": "00:15",
-            "fecha_deteccion": "2026-03-09 13:35:50"
+            "fecha_deteccion": "2026-03-09 14:46:57"
         },
         {
             "id": 151,
@@ -308,7 +308,7 @@
             "frame": 482,
             "tiempo_segundos": 16.07,
             "tiempo_formato": "00:16",
-            "fecha_deteccion": "2026-03-09 13:35:52"
+            "fecha_deteccion": "2026-03-09 14:46:58"
         },
         {
             "id": 152,
@@ -321,7 +321,7 @@
             "frame": 486,
             "tiempo_segundos": 16.2,
             "tiempo_formato": "00:16",
-            "fecha_deteccion": "2026-03-09 13:35:52"
+            "fecha_deteccion": "2026-03-09 14:46:59"
         },
         {
             "id": 154,
@@ -334,7 +334,7 @@
             "frame": 491,
             "tiempo_segundos": 16.37,
             "tiempo_formato": "00:16",
-            "fecha_deteccion": "2026-03-09 13:35:52"
+            "fecha_deteccion": "2026-03-09 14:46:59"
         },
         {
             "id": 163,
@@ -347,7 +347,7 @@
             "frame": 518,
             "tiempo_segundos": 17.27,
             "tiempo_formato": "00:17",
-            "fecha_deteccion": "2026-03-09 13:35:55"
+            "fecha_deteccion": "2026-03-09 14:47:01"
         },
         {
             "id": 164,
@@ -360,7 +360,7 @@
             "frame": 521,
             "tiempo_segundos": 17.37,
             "tiempo_formato": "00:17",
-            "fecha_deteccion": "2026-03-09 13:35:55"
+            "fecha_deteccion": "2026-03-09 14:47:01"
         },
         {
             "id": 165,
@@ -373,7 +373,7 @@
             "frame": 526,
             "tiempo_segundos": 17.53,
             "tiempo_formato": "00:17",
-            "fecha_deteccion": "2026-03-09 13:35:55"
+            "fecha_deteccion": "2026-03-09 14:47:02"
         },
         {
             "id": 167,
@@ -386,7 +386,7 @@
             "frame": 530,
             "tiempo_segundos": 17.67,
             "tiempo_formato": "00:17",
-            "fecha_deteccion": "2026-03-09 13:35:56"
+            "fecha_deteccion": "2026-03-09 14:47:02"
         },
         {
             "id": 180,
@@ -399,7 +399,7 @@
             "frame": 556,
             "tiempo_segundos": 18.53,
             "tiempo_formato": "00:18",
-            "fecha_deteccion": "2026-03-09 13:35:58"
+            "fecha_deteccion": "2026-03-09 14:47:04"
         },
         {
             "id": 181,
@@ -412,7 +412,7 @@
             "frame": 558,
             "tiempo_segundos": 18.6,
             "tiempo_formato": "00:18",
-            "fecha_deteccion": "2026-03-09 13:35:58"
+            "fecha_deteccion": "2026-03-09 14:47:04"
         },
         {
             "id": 193,
@@ -425,7 +425,7 @@
             "frame": 568,
             "tiempo_segundos": 18.93,
             "tiempo_formato": "00:18",
-            "fecha_deteccion": "2026-03-09 13:35:59"
+            "fecha_deteccion": "2026-03-09 14:47:05"
         },
         {
             "id": 198,
@@ -438,7 +438,7 @@
             "frame": 572,
             "tiempo_segundos": 19.07,
             "tiempo_formato": "00:19",
-            "fecha_deteccion": "2026-03-09 13:35:59"
+            "fecha_deteccion": "2026-03-09 14:47:06"
         },
         {
             "id": 211,
@@ -451,7 +451,7 @@
             "frame": 580,
             "tiempo_segundos": 19.33,
             "tiempo_formato": "00:19",
-            "fecha_deteccion": "2026-03-09 13:36:00"
+            "fecha_deteccion": "2026-03-09 14:47:06"
         },
         {
             "id": 221,
@@ -464,7 +464,7 @@
             "frame": 587,
             "tiempo_segundos": 19.57,
             "tiempo_formato": "00:19",
-            "fecha_deteccion": "2026-03-09 13:36:00"
+            "fecha_deteccion": "2026-03-09 14:47:07"
         },
         {
             "id": 231,
@@ -477,7 +477,7 @@
             "frame": 633,
             "tiempo_segundos": 21.1,
             "tiempo_formato": "00:21",
-            "fecha_deteccion": "2026-03-09 13:36:04"
+            "fecha_deteccion": "2026-03-09 14:47:10"
         },
         {
             "id": 249,
@@ -490,7 +490,7 @@
             "frame": 653,
             "tiempo_segundos": 21.77,
             "tiempo_formato": "00:21",
-            "fecha_deteccion": "2026-03-09 13:36:06"
+            "fecha_deteccion": "2026-03-09 14:47:12"
         },
         {
             "id": 252,
@@ -503,7 +503,7 @@
             "frame": 655,
             "tiempo_segundos": 21.83,
             "tiempo_formato": "00:21",
-            "fecha_deteccion": "2026-03-09 13:36:06"
+            "fecha_deteccion": "2026-03-09 14:47:12"
         },
         {
             "id": 258,
@@ -516,7 +516,7 @@
             "frame": 662,
             "tiempo_segundos": 22.07,
             "tiempo_formato": "00:22",
-            "fecha_deteccion": "2026-03-09 13:36:06"
+            "fecha_deteccion": "2026-03-09 14:47:13"
         },
         {
             "id": 271,
@@ -529,7 +529,7 @@
             "frame": 682,
             "tiempo_segundos": 22.73,
             "tiempo_formato": "00:22",
-            "fecha_deteccion": "2026-03-09 13:36:08"
+            "fecha_deteccion": "2026-03-09 14:47:14"
         },
         {
             "id": 281,
@@ -542,7 +542,7 @@
             "frame": 705,
             "tiempo_segundos": 23.5,
             "tiempo_formato": "00:23",
-            "fecha_deteccion": "2026-03-09 13:36:10"
+            "fecha_deteccion": "2026-03-09 14:47:16"
         },
         {
             "id": 300,
@@ -555,7 +555,7 @@
             "frame": 723,
             "tiempo_segundos": 24.1,
             "tiempo_formato": "00:24",
-            "fecha_deteccion": "2026-03-09 13:36:11"
+            "fecha_deteccion": "2026-03-09 14:47:18"
         },
         {
             "id": 314,
@@ -568,7 +568,7 @@
             "frame": 728,
             "tiempo_segundos": 24.27,
             "tiempo_formato": "00:24",
-            "fecha_deteccion": "2026-03-09 13:36:12"
+            "fecha_deteccion": "2026-03-09 14:47:18"
         },
         {
             "id": 316,
@@ -581,7 +581,7 @@
             "frame": 730,
             "tiempo_segundos": 24.33,
             "tiempo_formato": "00:24",
-            "fecha_deteccion": "2026-03-09 13:36:12"
+            "fecha_deteccion": "2026-03-09 14:47:18"
         },
         {
             "id": 324,
@@ -594,7 +594,7 @@
             "frame": 737,
             "tiempo_segundos": 24.57,
             "tiempo_formato": "00:24",
-            "fecha_deteccion": "2026-03-09 13:36:13"
+            "fecha_deteccion": "2026-03-09 14:47:19"
         },
         {
             "id": 328,
@@ -607,7 +607,7 @@
             "frame": 748,
             "tiempo_segundos": 24.93,
             "tiempo_formato": "00:24",
-            "fecha_deteccion": "2026-03-09 13:36:14"
+            "fecha_deteccion": "2026-03-09 14:47:20"
         },
         {
             "id": 334,
@@ -620,7 +620,7 @@
             "frame": 751,
             "tiempo_segundos": 25.03,
             "tiempo_formato": "00:25",
-            "fecha_deteccion": "2026-03-09 13:36:14"
+            "fecha_deteccion": "2026-03-09 14:47:20"
         },
         {
             "id": 356,
@@ -633,7 +633,7 @@
             "frame": 791,
             "tiempo_segundos": 26.37,
             "tiempo_formato": "00:26",
-            "fecha_deteccion": "2026-03-09 13:36:17"
+            "fecha_deteccion": "2026-03-09 14:47:23"
         },
         {
             "id": 367,
@@ -646,7 +646,7 @@
             "frame": 811,
             "tiempo_segundos": 27.03,
             "tiempo_formato": "00:27",
-            "fecha_deteccion": "2026-03-09 13:36:19"
+            "fecha_deteccion": "2026-03-09 14:47:25"
         },
         {
             "id": 379,
@@ -659,7 +659,7 @@
             "frame": 830,
             "tiempo_segundos": 27.67,
             "tiempo_formato": "00:27",
-            "fecha_deteccion": "2026-03-09 13:36:21"
+            "fecha_deteccion": "2026-03-09 14:47:27"
         },
         {
             "id": 386,
@@ -672,7 +672,7 @@
             "frame": 847,
             "tiempo_segundos": 28.23,
             "tiempo_formato": "00:28",
-            "fecha_deteccion": "2026-03-09 13:36:22"
+            "fecha_deteccion": "2026-03-09 14:47:28"
         },
         {
             "id": 387,
@@ -685,7 +685,7 @@
             "frame": 848,
             "tiempo_segundos": 28.27,
             "tiempo_formato": "00:28",
-            "fecha_deteccion": "2026-03-09 13:36:22"
+            "fecha_deteccion": "2026-03-09 14:47:28"
         },
         {
             "id": 389,
@@ -698,7 +698,7 @@
             "frame": 857,
             "tiempo_segundos": 28.57,
             "tiempo_formato": "00:28",
-            "fecha_deteccion": "2026-03-09 13:36:23"
+            "fecha_deteccion": "2026-03-09 14:47:29"
         },
         {
             "id": 391,
@@ -711,7 +711,7 @@
             "frame": 864,
             "tiempo_segundos": 28.8,
             "tiempo_formato": "00:28",
-            "fecha_deteccion": "2026-03-09 13:36:24"
+            "fecha_deteccion": "2026-03-09 14:47:30"
         },
         {
             "id": 410,
@@ -724,7 +724,7 @@
             "frame": 891,
             "tiempo_segundos": 29.7,
             "tiempo_formato": "00:29",
-            "fecha_deteccion": "2026-03-09 13:36:26"
+            "fecha_deteccion": "2026-03-09 14:47:32"
         },
         {
             "id": 416,
@@ -737,7 +737,7 @@
             "frame": 903,
             "tiempo_segundos": 30.1,
             "tiempo_formato": "00:30",
-            "fecha_deteccion": "2026-03-09 13:36:27"
+            "fecha_deteccion": "2026-03-09 14:47:33"
         },
         {
             "id": 420,
@@ -750,7 +750,7 @@
             "frame": 925,
             "tiempo_segundos": 30.83,
             "tiempo_formato": "00:30",
-            "fecha_deteccion": "2026-03-09 13:36:29"
+            "fecha_deteccion": "2026-03-09 14:47:35"
         },
         {
             "id": 424,
@@ -763,7 +763,7 @@
             "frame": 936,
             "tiempo_segundos": 31.2,
             "tiempo_formato": "00:31",
-            "fecha_deteccion": "2026-03-09 13:36:30"
+            "fecha_deteccion": "2026-03-09 14:47:36"
         },
         {
             "id": 430,
@@ -776,7 +776,7 @@
             "frame": 942,
             "tiempo_segundos": 31.4,
             "tiempo_formato": "00:31",
-            "fecha_deteccion": "2026-03-09 13:36:30"
+            "fecha_deteccion": "2026-03-09 14:47:36"
         },
         {
             "id": 432,
@@ -789,7 +789,7 @@
             "frame": 944,
             "tiempo_segundos": 31.47,
             "tiempo_formato": "00:31",
-            "fecha_deteccion": "2026-03-09 13:36:30"
+            "fecha_deteccion": "2026-03-09 14:47:36"
         },
         {
             "id": 442,
@@ -802,7 +802,7 @@
             "frame": 950,
             "tiempo_segundos": 31.67,
             "tiempo_formato": "00:31",
-            "fecha_deteccion": "2026-03-09 13:36:31"
+            "fecha_deteccion": "2026-03-09 14:47:37"
         },
         {
             "id": 451,
@@ -815,7 +815,7 @@
             "frame": 955,
             "tiempo_segundos": 31.83,
             "tiempo_formato": "00:31",
-            "fecha_deteccion": "2026-03-09 13:36:31"
+            "fecha_deteccion": "2026-03-09 14:47:37"
         },
         {
             "id": 452,
@@ -828,7 +828,7 @@
             "frame": 956,
             "tiempo_segundos": 31.87,
             "tiempo_formato": "00:31",
-            "fecha_deteccion": "2026-03-09 13:36:31"
+            "fecha_deteccion": "2026-03-09 14:47:37"
         },
         {
             "id": 470,
@@ -841,7 +841,7 @@
             "frame": 980,
             "tiempo_segundos": 32.67,
             "tiempo_formato": "00:32",
-            "fecha_deteccion": "2026-03-09 13:36:33"
+            "fecha_deteccion": "2026-03-09 14:47:39"
         },
         {
             "id": 476,
@@ -854,7 +854,7 @@
             "frame": 1019,
             "tiempo_segundos": 33.97,
             "tiempo_formato": "00:33",
-            "fecha_deteccion": "2026-03-09 13:36:36"
+            "fecha_deteccion": "2026-03-09 14:47:42"
         },
         {
             "id": 478,
@@ -867,7 +867,7 @@
             "frame": 1032,
             "tiempo_segundos": 34.4,
             "tiempo_formato": "00:34",
-            "fecha_deteccion": "2026-03-09 13:36:38"
+            "fecha_deteccion": "2026-03-09 14:47:44"
         },
         {
             "id": 481,
@@ -880,7 +880,7 @@
             "frame": 1049,
             "tiempo_segundos": 34.97,
             "tiempo_formato": "00:34",
-            "fecha_deteccion": "2026-03-09 13:36:39"
+            "fecha_deteccion": "2026-03-09 14:47:45"
         },
         {
             "id": 486,
@@ -893,7 +893,7 @@
             "frame": 1078,
             "tiempo_segundos": 35.93,
             "tiempo_formato": "00:35",
-            "fecha_deteccion": "2026-03-09 13:36:41"
+            "fecha_deteccion": "2026-03-09 14:47:48"
         },
         {
             "id": 491,
@@ -906,7 +906,7 @@
             "frame": 1101,
             "tiempo_segundos": 36.7,
             "tiempo_formato": "00:36",
-            "fecha_deteccion": "2026-03-09 13:36:43"
+            "fecha_deteccion": "2026-03-09 14:47:50"
         },
         {
             "id": 494,
@@ -919,7 +919,7 @@
             "frame": 1104,
             "tiempo_segundos": 36.8,
             "tiempo_formato": "00:36",
-            "fecha_deteccion": "2026-03-09 13:36:43"
+            "fecha_deteccion": "2026-03-09 14:47:50"
         },
         {
             "id": 496,
@@ -932,7 +932,7 @@
             "frame": 1115,
             "tiempo_segundos": 37.17,
             "tiempo_formato": "00:37",
-            "fecha_deteccion": "2026-03-09 13:36:44"
+            "fecha_deteccion": "2026-03-09 14:47:51"
         },
         {
             "id": 501,
@@ -945,7 +945,7 @@
             "frame": 1124,
             "tiempo_segundos": 37.47,
             "tiempo_formato": "00:37",
-            "fecha_deteccion": "2026-03-09 13:36:45"
+            "fecha_deteccion": "2026-03-09 14:47:52"
         },
         {
             "id": 507,
@@ -958,7 +958,7 @@
             "frame": 1137,
             "tiempo_segundos": 37.9,
             "tiempo_formato": "00:37",
-            "fecha_deteccion": "2026-03-09 13:36:46"
+            "fecha_deteccion": "2026-03-09 14:47:53"
         },
         {
             "id": 519,
@@ -971,7 +971,7 @@
             "frame": 1149,
             "tiempo_segundos": 38.3,
             "tiempo_formato": "00:38",
-            "fecha_deteccion": "2026-03-09 13:36:47"
+            "fecha_deteccion": "2026-03-09 14:47:54"
         },
         {
             "id": 520,
@@ -984,7 +984,7 @@
             "frame": 1151,
             "tiempo_segundos": 38.37,
             "tiempo_formato": "00:38",
-            "fecha_deteccion": "2026-03-09 13:36:47"
+            "fecha_deteccion": "2026-03-09 14:47:54"
         },
         {
             "id": 526,
@@ -997,7 +997,7 @@
             "frame": 1156,
             "tiempo_segundos": 38.53,
             "tiempo_formato": "00:38",
-            "fecha_deteccion": "2026-03-09 13:36:48"
+            "fecha_deteccion": "2026-03-09 14:47:54"
         },
         {
             "id": 531,
@@ -1010,7 +1010,7 @@
             "frame": 1159,
             "tiempo_segundos": 38.63,
             "tiempo_formato": "00:38",
-            "fecha_deteccion": "2026-03-09 13:36:48"
+            "fecha_deteccion": "2026-03-09 14:47:55"
         },
         {
             "id": 542,
@@ -1023,7 +1023,7 @@
             "frame": 1165,
             "tiempo_segundos": 38.83,
             "tiempo_formato": "00:38",
-            "fecha_deteccion": "2026-03-09 13:36:49"
+            "fecha_deteccion": "2026-03-09 14:47:55"
         },
         {
             "id": 545,
@@ -1036,7 +1036,7 @@
             "frame": 1168,
             "tiempo_segundos": 38.93,
             "tiempo_formato": "00:38",
-            "fecha_deteccion": "2026-03-09 13:36:49"
+            "fecha_deteccion": "2026-03-09 14:47:56"
         },
         {
             "id": 548,
@@ -1049,7 +1049,7 @@
             "frame": 1171,
             "tiempo_segundos": 39.03,
             "tiempo_formato": "00:39",
-            "fecha_deteccion": "2026-03-09 13:36:49"
+            "fecha_deteccion": "2026-03-09 14:47:56"
         },
         {
             "id": 552,
@@ -1062,7 +1062,7 @@
             "frame": 1173,
             "tiempo_segundos": 39.1,
             "tiempo_formato": "00:39",
-            "fecha_deteccion": "2026-03-09 13:36:49"
+            "fecha_deteccion": "2026-03-09 14:47:56"
         },
         {
             "id": 566,
@@ -1075,7 +1075,7 @@
             "frame": 1204,
             "tiempo_segundos": 40.13,
             "tiempo_formato": "00:40",
-            "fecha_deteccion": "2026-03-09 13:36:52"
+            "fecha_deteccion": "2026-03-09 14:47:59"
         },
         {
             "id": 577,
@@ -1088,7 +1088,7 @@
             "frame": 1213,
             "tiempo_segundos": 40.43,
             "tiempo_formato": "00:40",
-            "fecha_deteccion": "2026-03-09 13:36:53"
+            "fecha_deteccion": "2026-03-09 14:47:59"
         }
     ]
 }
