@@ -9,7 +9,7 @@ from typing import Optional, Dict
 # CONFIGURACIONES INICIALES
 # ================================
 MODEL_PATH = "./best.pt"
-VIDEO_PATH = "./videos-m/prueba1.MOV"
+VIDEO_PATH = "./videos-m/test1.MOV"
 OUTPUT_PATH = "output_con_metadatos.MOV"
 
 # Set para almacenar IDs únicos de baches detectados

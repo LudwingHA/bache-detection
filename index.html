@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipo - Visualizador de Baches</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+        .stats {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+        }
+        .stat-item {
+            display: inline-block;
+            margin-right: 30px;
+        }
+        .stat-label {
+            font-weight: bold;
+            color: #666;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+        }
+        .filtros {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+        }
+        .filtros input, .filtros select, .filtros button {
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+        }
+        .filtros button {
+            background: #0066cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .filtros button.reset {
+            background: #666;
+        }
+        table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f0f0f0;
+        }
+        tr:hover {
+            background: #f9f9f9;
+        }
+        .badge {
+            padding: 3px 8px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .btn-link {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .btn-link:hover {
+            text-decoration: underline;
+        }
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+        }
+        .error {
+            color: #cc0000;
+            padding: 20px;
+            text-align: center;
+            background: #ffeeee;
+            border: 1px solid #cc0000;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+            z-index: 1000;
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        .modal h3 {
+            margin-top: 0;
+        }
+        .modal-close {
+            float: right;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .detail-row {
+            margin: 10px 0;
+            padding: 5px;
+            background: #f9f9f9;
+        }
+        .export-btn {
+            margin: 10px 0;
+            padding: 8px 15px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Prototipo - Visualizador de Baches</h1>
+        
+        <!-- Stats simples -->
+        <div class="stats" id="stats">
+            <div class="stat-item">
+                <span class="stat-label">Total baches:</span>
+                <span id="total-baches">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Fecha:</span>
+                <span id="fecha-procesamiento">-</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Video:</span>
+                <span id="video-procesado">-</span>
+            </div>
+        </div>
+
+        <!-- Mapa simple -->
+        <div id="map"></div>
+
+        <!-- Filtros básicos -->
+        <div class="filtros">
+            <input type="text" id="searchInput" placeholder="Buscar ID o clase...">
+            <select id="filterType">
+                <option value="todos">Todos los tipos</option>
+                <option value="bache">Baches</option>
+                <option value="socavon">Socavones</option>
+                <option value="grieta">Grietas</option>
+            </select>
+            <button onclick="filtrarDatos()">Filtrar</button>
+            <button class="reset" onclick="resetFiltros()">Limpiar</button>
+            <button class="export-btn" onclick="exportarCSV()">Exportar CSV</button>
+        </div>
+
+        <!-- Tabla de datos -->
+        <table id="tabla-baches">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Confianza</th>
+                    <th>Coordenadas</th>
+                    <th>Mapa</th>
+                    <th>Tiempo</th>
+                    <th>Detalle</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-body">
+                <tr>
+                    <td colspan="7" class="loading">Cargando datos...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal simple -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="detailModal">
+        <span class="modal-close" onclick="cerrarModal()">&times;</span>
+        <h3>Detalles del Bache</h3>
+        <div id="modal-content"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // Variables
+        let map;
+        let markers = [];
+        let datosOriginales = null;
+        let datosFiltrados = null;
+
+        // Cargar datos
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarDatos();
+        });
+
+        function cargarDatos() {
+            fetch('detecciones_baches.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('No se encontró el archivo JSON');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    datosOriginales = data;
+                    datosFiltrados = data;
+                    actualizarStats(data);
+                    inicializarMapa(data);
+                    actualizarTabla(data.detecciones);
+                })
+                .catch(error => {
+                    document.getElementById('tabla-body').innerHTML = `
+                        <tr>
+                            <td colspan="7" class="error">
+                                Error: ${error.message}<br>
+                                Asegúrate de que el archivo 'detecciones_baches.json' existe
+                            </td>
+                        </tr>
+                    `;
+                });
+        }
+
+        function actualizarStats(data) {
+            document.getElementById('total-baches').textContent = data.total_baches_unicos || 0;
+            document.getElementById('fecha-procesamiento').textContent = data.fecha_procesamiento || '-';
+            document.getElementById('video-procesado').textContent = data.video_procesado || '-';
+        }
+
+        function inicializarMapa(data) {
+            if (map) map.remove();
+
+            // Centro del mapa
+            let centerLat = 19.4326;
+            let centerLon = -99.1332;
+            
+            if (data.detecciones && data.detecciones.length > 0) {
+                const lats = data.detecciones.map(d => d.lat);
+                const lons = data.detecciones.map(d => d.lon);
+                centerLat = lats.reduce((a, b) => a + b, 0) / lats.length;
+                centerLon = lons.reduce((a, b) => a + b, 0) / lons.length;
+            }
+
+            map = L.map('map').setView([centerLat, centerLon], 14);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+            // Agregar marcadores
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+
+            if (data.detecciones) {
+                data.detecciones.forEach(d => {
+                    const marker = L.marker([d.lat, d.lon]).addTo(map);
+                    marker.bindPopup(`
+                        <b>ID ${d.id}:</b> ${d.clase}<br>
+                        Conf: ${(d.confianza * 100).toFixed(1)}%<br>
+                        <a href="${d.google_maps}" target="_blank">Google Maps</a>
+                    `);
+                    markers.push(marker);
+                });
+            }
+        }
+
+        function actualizarTabla(detecciones) {
+            const tbody = document.getElementById('tabla-body');
+            
+            if (!detecciones || detecciones.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center;">No hay datos</td></tr>';
+                return;
+            }
+
+            let html = '';
+            detecciones.forEach(d => {
+                html += `
+                    <tr>
+                        <td>${d.id}</td>
+                        <td><span class="badge">${d.clase}</span></td>
+                        <td>${(d.confianza * 100).toFixed(1)}%</td>
+                        <td>${d.lat.toFixed(4)}, ${d.lon.toFixed(4)}</td>
+                        <td><a href="${d.google_maps}" target="_blank" class="btn-link">Ver</a></td>
+                        <td>${d.tiempo_formato}</td>
+                        <td><button onclick="verDetalle(${d.id})" style="cursor: pointer;">Ver</button></td>
+                    </tr>
+                `;
+            });
+            
+            tbody.innerHTML = html;
+        }
+
+        function filtrarDatos() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const filterType = document.getElementById('filterType').value;
+
+            let filtradas = datosOriginales.detecciones.filter(d => {
+                if (filterType !== 'todos' && !d.clase.toLowerCase().includes(filterType)) {
+                    return false;
+                }
+                if (searchTerm) {
+                    return d.id.toString().includes(searchTerm) || 
+                           d.clase.toLowerCase().includes(searchTerm);
+                }
+                return true;
+            });
+
+            datosFiltrados = {...datosOriginales, detecciones: filtradas};
+            actualizarTabla(filtradas);
+            actualizarMarcadores(filtradas);
+        }
+
+        function resetFiltros() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('filterType').value = 'todos';
+            datosFiltrados = datosOriginales;
+            actualizarTabla(datosOriginales.detecciones);
+            actualizarMarcadores(datosOriginales.detecciones);
+        }
+
+        function actualizarMarcadores(detecciones) {
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+
+            detecciones.forEach(d => {
+                const marker = L.marker([d.lat, d.lon]).addTo(map);
+                marker.bindPopup(`ID ${d.id}: ${d.clase}`);
+                markers.push(marker);
+            });
+        }
+
+        function verDetalle(id) {
+            const detalle = datosFiltrados.detecciones.find(d => d.id === id);
+            
+            if (detalle) {
+                const content = document.getElementById('modal-content');
+                content.innerHTML = `
+                    <div class="detail-row"><strong>ID:</strong> ${detalle.id}</div>
+                    <div class="detail-row"><strong>Tipo:</strong> ${detalle.clase}</div>
+                    <div class="detail-row"><strong>Confianza:</strong> ${(detalle.confianza * 100).toFixed(1)}%</div>
+                    <div class="detail-row"><strong>Latitud:</strong> ${detalle.lat}</div>
+                    <div class="detail-row"><strong>Longitud:</strong> ${detalle.lon}</div>
+                    <div class="detail-row"><strong>Frame:</strong> ${detalle.frame}</div>
+                    <div class="detail-row"><strong>Tiempo:</strong> ${detalle.tiempo_formato}</div>
+                    <div class="detail-row"><strong>Fecha:</strong> ${detalle.fecha_deteccion}</div>
+                    <div class="detail-row"><a href="${detalle.google_maps}" target="_blank">Abrir en Google Maps</a></div>
+                `;
+                
+                document.getElementById('detailModal').style.display = 'block';
+                document.getElementById('modalOverlay').style.display = 'block';
+            }
+        }
+
+        function cerrarModal() {
+            document.getElementById('detailModal').style.display = 'none';
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+
+        function exportarCSV() {
+            if (!datosFiltrados || !datosFiltrados.detecciones) return;
+            
+            const headers = ['ID', 'Tipo', 'Confianza', 'Latitud', 'Longitud', 'Tiempo'];
+            const rows = datosFiltrados.detecciones.map(d => [
+                d.id,
+                d.clase,
+                d.confianza,
+                d.lat,
+                d.lon,
+                d.tiempo_formato
+            ]);
+
+            let csv = headers.join(',') + '\n' + rows.map(row => row.join(',')).join('\n');
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'baches.csv';
+            link.click();
+        }
+    </script>
+</body>
+</html>

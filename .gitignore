@@ -68,7 +68,6 @@ htmlcov/
 *.pdf
 *.doc
 *.docx
-*.txt
 *.mp4
 *.mov
 # =========================
