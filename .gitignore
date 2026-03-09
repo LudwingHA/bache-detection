@@ -1,0 +1,78 @@
+# =========================
+# Entornos virtuales
+# =========================
+nevn/
+venv/
+env/
+.venv/
+ENV/
+bin/
+Lib/
+share/
+Scripts/
+combined_annotatedv2/
+
+pyvenv.cfg
+
+# =========================
+# Archivos compilados Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Distribución / build
+# =========================
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+
+# =========================
+# Testing / Coverage
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# IDEs / Editores
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Variables de entorno
+# =========================
+.env
+.env.*
+
+# =========================
+# Documentos y datasets
+# =========================
+*.xlsx
+*.xls
+*.csv
+*.pdf
+*.doc
+*.docx
+*.txt
+*.mp4
+*.mov
+# =========================
+# Archivos del sistema
+# =========================
+.DS_Store
+Thumbs.db
