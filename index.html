@@ -174,12 +174,17 @@
 
         <!-- Filtros básicos -->
         <div class="filtros">
-            <input type="text" id="searchInput" placeholder="Buscar ID o clase...">
+            <input type="text" id="searchInput" placeholder="Buscar ID o tipo...">
             <select id="filterType">
                 <option value="todos">Todos los tipos</option>
-                <option value="bache">Baches</option>
-                <option value="socavon">Socavones</option>
-                <option value="grieta">Grietas</option>
+                <option value="grieta_longitudinal">Grieta longitudinal</option>
+                <option value="grieta_longitudinal_ancha">Grieta longitudinal ancha</option>
+                <option value="grieta_transversal">Grieta transversal</option>
+                <option value="grieta_transversal_ancha">Grieta transversal ancha</option>
+                <option value="grieta_piel_cocodrilo">Grieta piel cocodrilo</option>
+                <option value="grieta_piel_cocodrilo_hundida">Grieta piel cocodrilo hundida</option>
+                <option value="bache">Bache</option>
+                <option value="bache_profundo">Bache profundo</option>
             </select>
             <button onclick="filtrarDatos()">Filtrar</button>
             <button class="reset" onclick="resetFiltros()">Limpiar</button>
@@ -265,7 +270,6 @@
         function inicializarMapa(data) {
             if (map) map.remove();
 
-            // Centro del mapa
             let centerLat = 19.4326;
             let centerLon = -99.1332;
             
@@ -279,7 +283,6 @@
             map = L.map('map').setView([centerLat, centerLon], 14);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-            // Agregar marcadores
             markers.forEach(m => map.removeLayer(m));
             markers = [];
 
@@ -306,10 +309,13 @@
 
             let html = '';
             detecciones.forEach(d => {
+                // Formatear el nombre para mostrarlo más legible
+                let nombreMostrar = d.clase.replace(/_/g, ' ');
+                
                 html += `
                     <tr>
                         <td>${d.id}</td>
-                        <td><span class="badge">${d.clase}</span></td>
+                        <td><span class="badge">${nombreMostrar}</span></td>
                         <td>${(d.confianza * 100).toFixed(1)}%</td>
                         <td>${d.lat.toFixed(4)}, ${d.lon.toFixed(4)}</td>
                         <td><a href="${d.google_maps}" target="_blank" class="btn-link">Ver</a></td>
@@ -327,7 +333,7 @@
             const filterType = document.getElementById('filterType').value;
 
             let filtradas = datosOriginales.detecciones.filter(d => {
-                if (filterType !== 'todos' && !d.clase.toLowerCase().includes(filterType)) {
+                if (filterType !== 'todos' && !d.clase.includes(filterType)) {
                     return false;
                 }
                 if (searchTerm) {
@@ -368,7 +374,7 @@
                 const content = document.getElementById('modal-content');
                 content.innerHTML = `
                     <div class="detail-row"><strong>ID:</strong> ${detalle.id}</div>
-                    <div class="detail-row"><strong>Tipo:</strong> ${detalle.clase}</div>
+                    <div class="detail-row"><strong>Tipo:</strong> ${detalle.clase.replace(/_/g, ' ')}</div>
                     <div class="detail-row"><strong>Confianza:</strong> ${(detalle.confianza * 100).toFixed(1)}%</div>
                     <div class="detail-row"><strong>Latitud:</strong> ${detalle.lat}</div>
                     <div class="detail-row"><strong>Longitud:</strong> ${detalle.lon}</div>
