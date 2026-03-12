@@ -12,7 +12,7 @@ from datetime import datetime
 # ================================
 
 MODEL_PATH = "./best.pt"
-VIDEO_PATH = "./videos-m/test1.MOV"
+VIDEO_PATH = "./videos-m/prueba1.mov"
 OUTPUT_PATH = "output_con_metadatos.MOV"
 JSON_PATH = "detecciones_baches.json"
 
@@ -190,7 +190,7 @@ def procesar_video():
     out = cv2.VideoWriter(
         OUTPUT_PATH,
         cv2.VideoWriter_fourcc(*"mp4v"),
-        fps,
+        (fps/2),
         (width, height)
     )
 
@@ -203,7 +203,9 @@ def procesar_video():
         persist=True,
         stream=True,
         classes=[0, 1, 2, 3, 4, 5, 6, 7],
-        verbose=False
+        verbose=False,
+        vid_stride=2
+        
     )
 
     print("Procesando video... (Presiona 'q' para detener)")
@@ -286,7 +288,7 @@ def procesar_video():
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
                 cv2.putText(
                     frame,
-                    f"ID:{id_bache} {nombre_espanol}",
+                    f"Detectado ({nombre_espanol})",
                     (x1, y1 - 10),
                     cv2.FONT_HERSHEY_SIMPLEX,
                     2.5,

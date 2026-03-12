@@ -18,7 +18,7 @@ from datetime import datetime
 @dataclass
 class Config:
     """Configuración centralizada del sistema"""
-    video_path: str = "./videos-m/prueba4.mp4"
+    video_path: str = "./videos-m/test3.mp4"
     model_path: str = "./best.pt"
     report_name: str = "reporte_baches_geolocalizados.json"
     confidence_threshold: float = 0.3

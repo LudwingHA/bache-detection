@@ -9,7 +9,7 @@ import numpy as np
 # ================================
 # CONFIGURACIÓN
 # ================================
-VIDEO_PATH = "./videos-m/PRUEBA10.mov"
+VIDEO_PATH = "./videos-m/test3.mp4"
 MODEL_PATH = "./best.pt"
 REPORT_NAME = "reporte_baches_geolocalizados.json"
 
