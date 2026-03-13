@@ -7,16 +7,13 @@ from typing import Optional, Dict
 import os
 from datetime import datetime
 
-# ================================
-# CONFIGURACIONES
-# ================================
+
 
 MODEL_PATH = "./best.pt"
 VIDEO_PATH = "./videos-m/prueba1.mov"
 OUTPUT_PATH = "output_con_metadatos.MOV"
 JSON_PATH = "detecciones_baches.json"
 
-# Mapeo de clases inglés → español
 CLASES_ESPAÑOL = {
     "longitudinal_crack": "grieta_longitudinal",
     "longitudinal_crack_wide": "grieta_longitudinal_ancha",
@@ -28,18 +25,16 @@ CLASES_ESPAÑOL = {
     "pothole_deep": "bache_profundo"
 }
 
-# GPS inicial (se actualizará con metadatos reales si existen)
+
 gps_lat_actual = 19.432600
 gps_lon_actual = -99.133200
 
-# Para evitar duplicados
+
 baches_detectados = {}
 detecciones_json = []
 UMBRAL_DISTANCIA_GPS = 0.00002
 
-# ================================
-# DMS → DECIMAL
-# ================================
+
 def dms_a_decimal(dms_str: str) -> Optional[float]:
     if not dms_str or not isinstance(dms_str, str):
         return None
@@ -62,35 +57,19 @@ def dms_a_decimal(dms_str: str) -> Optional[float]:
 
     return round(decimal, 6)
 
-
-# ================================
-# SIMULAR MOVIMIENTO DESDE GPS REAL
-# ================================
+# simulacion de gps
 def simular_gps(lat, lon, paso=0.00002):
     lat = lat + paso
     lon = lon + paso * 0.5
     return round(lat, 6), round(lon, 6)
 
-
-# ================================
-# GENERAR ENLACE DE GOOGLE MAPS
-# ================================
 def generar_enlace_google_maps(lat: float, lon: float) -> str:
     return f"https://www.google.com/maps?q={lat},{lon}"
 
-
-# ================================
-# VERIFICAR SI ES EL MISMO BACHE
-# ================================
 def es_mismo_bache(lat1: float, lon1: float, lat2: float, lon2: float) -> bool:
     diff_lat = abs(lat1 - lat2)
     diff_lon = abs(lon1 - lon2)
     return diff_lat < UMBRAL_DISTANCIA_GPS and diff_lon < UMBRAL_DISTANCIA_GPS
-
-
-# ================================
-# EXTRAER METADATOS
-# ================================
 def extraer_metadatos(video_path: str) -> Optional[Dict]:
     try:
         if not os.path.exists(video_path):
@@ -125,9 +104,6 @@ def extraer_metadatos(video_path: str) -> Optional[Dict]:
         return None
 
 
-# ================================
-# PROCESAR VIDEO
-# ================================
 def procesar_video():
     global gps_lat_actual, gps_lon_actual
 
@@ -161,7 +137,6 @@ def procesar_video():
 
     print("="*50 + "\n")
 
-    # Cargar modelo
     if not os.path.exists(MODEL_PATH):
         print(f"Error: No se encuentra el modelo en {MODEL_PATH}")
         return
@@ -170,7 +145,6 @@ def procesar_video():
     model = YOLO(MODEL_PATH)
     print("✅ Modelo cargado correctamente")
 
-    # Configurar video
     cap = cv2.VideoCapture(VIDEO_PATH)
     if not cap.isOpened():
         print(f"Error: No se puede abrir el video {VIDEO_PATH}")
@@ -196,7 +170,7 @@ def procesar_video():
 
     frame_num = 0
 
-    # Tracking
+
     results = model.track(
         source=VIDEO_PATH,
         conf=0.02,
@@ -217,7 +191,6 @@ def procesar_video():
             progreso = (frame_num / total_frames) * 100
             print(f"Progreso: {progreso:.1f}% - Detectados: {len(baches_detectados)}")
 
-        # Actualizar GPS
         gps_lat_actual, gps_lon_actual = simular_gps(
             gps_lat_actual,
             gps_lon_actual,
@@ -227,7 +200,6 @@ def procesar_video():
         tiempo_seg = frame_num / fps
         frame = r.orig_img
 
-        # Procesar detecciones
         if r.boxes is not None and r.boxes.id is not None:
             ids = r.boxes.id.int().cpu().tolist()
             boxes = r.boxes.xyxy.int().cpu().tolist()
@@ -235,12 +207,10 @@ def procesar_video():
             confidences = r.boxes.conf.cpu().tolist() if r.boxes.conf is not None else [1.0] * len(ids)
 
             for box, id_bache, cls, conf in zip(boxes, ids, clases, confidences):
-                
-                # Obtener nombre en inglés del modelo y traducir a español
+          
                 nombre_ingles = model.names[cls]
                 nombre_espanol = CLASES_ESPAÑOL.get(nombre_ingles, nombre_ingles)
                 
-                # Verificar si el bache ya fue detectado
                 bache_nuevo = True
                 
                 if id_bache in baches_detectados:
@@ -260,8 +230,8 @@ def procesar_video():
                     
                     deteccion = {
                         "id": int(id_bache),
-                        "clase_original": nombre_ingles,  # Guardamos también el nombre original
-                        "clase": nombre_espanol,  # Nombre en español para mostrar
+                        "clase_original": nombre_ingles, 
+                        "clase": nombre_espanol,  
                         "confianza": round(conf, 3),
                         "lat": gps_lat_actual,
                         "lon": gps_lon_actual,
@@ -283,7 +253,7 @@ def procesar_video():
                     
                     print(f"✅ Nuevo: ID {id_bache} - {nombre_espanol}")
 
-                # Dibujar en el frame
+             
                 x1, y1, x2, y2 = box
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
                 cv2.putText(
@@ -296,7 +266,7 @@ def procesar_video():
                     2
                 )
 
-        # Mostrar contador
+
         total = len(baches_detectados)
         cv2.rectangle(frame, (20, 20), (380, 100), (0, 0, 0), -1)
         cv2.putText(
@@ -329,7 +299,7 @@ def procesar_video():
     out.release()
     cv2.destroyAllWindows()
 
-    # Guardar resultados
+
     print("\n" + "="*50)
     print("GUARDANDO RESULTADOS")
     print("="*50)
