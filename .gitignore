@@ -70,6 +70,8 @@ htmlcov/
 *.docx
 *.mp4
 *.mov
+*.zip
+*.rar
 # =========================
 # Archivos del sistema
 # =========================
