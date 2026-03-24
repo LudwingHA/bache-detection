@@ -1,9 +1,20 @@
 [
     {
-        "bache_id": 63,
+        "bache_id": 1,
         "tipo": "longitudinal_crack",
-        "lat": 19.354372,
-        "lon": -98.984164,
-        "google_maps": "https://www.google.com/maps?q=19.354372,-98.984164"
+        "lat": 19.356,
+        "lon": -99.17351,
+        "timestamp": "2026-03-20 14:40:07",
+        "frame": 497,
+        "google_maps": "https://www.google.com/maps?q=19.356,-99.17351"
+    },
+    {
+        "bache_id": 4,
+        "tipo": "longitudinal_crack_wide",
+        "lat": 11.0,
+        "lon": -99.17356,
+        "timestamp": "2026-03-20 14:40:12",
+        "frame": 525,
+        "google_maps": "https://www.google.com/maps?q=11.0,-99.17356"
     }
 ]

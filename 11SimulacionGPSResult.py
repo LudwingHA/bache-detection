@@ -8,9 +8,7 @@ import os
 from datetime import datetime
 import torch
 
-# ================================
-# CONFIG
-# ================================
+
 
 MODEL_PATH = "./best.pt"
 VIDEO_PATH = "./videos-m/test2.MOV"
@@ -36,10 +34,6 @@ detecciones_json = []
 UMBRAL_DISTANCIA_GPS = 0.00002
 
 
-# ================================
-# GPU M1
-# ================================
-
 if torch.backends.mps.is_available():
     DEVICE = "mps"
 else:
@@ -48,9 +42,6 @@ else:
 print("Dispositivo:", DEVICE)
 
 
-# ================================
-# DMS → DECIMAL
-# ================================
 
 def dms_a_decimal(dms_str: str):
 
@@ -73,9 +64,7 @@ def dms_a_decimal(dms_str: str):
     return round(decimal, 6)
 
 
-# ================================
-# GPS SIMULADO
-# ================================
+
 
 def simular_gps(lat, lon, paso=0.00002):
 
@@ -85,18 +74,13 @@ def simular_gps(lat, lon, paso=0.00002):
     return round(lat, 6), round(lon, 6)
 
 
-# ================================
-# GOOGLE MAPS
-# ================================
+#
 
 def generar_enlace_google_maps(lat, lon):
 
     return f"https://www.google.com/maps?q={lat},{lon}"
 
 
-# ================================
-# METADATOS
-# ================================
 
 def extraer_metadatos(video_path):
 
@@ -122,10 +106,6 @@ def extraer_metadatos(video_path):
     except:
         return None
 
-
-# ================================
-# PROCESAR VIDEO RAPIDO
-# ================================
 
 def procesar_video():
 
@@ -243,10 +223,6 @@ def procesar_video():
 
     print("\nJSON generado:", JSON_PATH)
 
-
-# ================================
-# MAIN
-# ================================
 
 if __name__ == "__main__":
 

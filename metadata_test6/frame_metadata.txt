@@ -1,0 +1,14 @@
+=== METADATOS DE FRAMES ===
+Archivo: ./videos-m/test6.mov
+Fecha extracción: 2026-03-20T15:08:01.281870
+
+VideoFrameRate: Video Frame Rate                : 30
+ImageWidth: Image Width                     : 3840
+ImageHeight: Image Height                    : 2160
+Duration: Duration                        : 0:05:00
+MediaCreateDate: Media Create Date               : 2026:03:18 22:42:38
+MediaModifyDate: Media Modify Date               : 2026:03:18 22:42:38
+TrackCreateDate: Track Create Date               : 2026:03:18 22:42:38
+GPSPosition: GPS Position                    : 19 deg 21' 25.52" N, 99 deg 10' 22.31" W
+GPSLatitude: GPS Latitude                    : 19 deg 21' 25.52" N
+GPSLongitude: GPS Longitude                   : 99 deg 10' 22.31" W

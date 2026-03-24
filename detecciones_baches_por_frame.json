@@ -1,0 +1,35 @@
+{
+    "metadata_video": {
+        "archivo": "test6.mov",
+        "fecha": null,
+        "modelo": null,
+        "fps": 30.0,
+        "total_frames": 9000,
+        "duracion_segundos": 300.0
+    },
+    "gps_info": {
+        "tipo": "punto_unico",
+        "coordenadas_iniciales": {
+            "lat": 19.357089,
+            "lon": -99.172864
+        }
+    },
+    "total_baches_unicos": 1,
+    "fecha_procesamiento": "2026-03-24 10:48:43",
+    "video_procesado": "test6.mov",
+    "detecciones_por_frame": [
+        {
+            "id": 5,
+            "clase_original": "longitudinal_crack_wide",
+            "clase": "grieta_longitudinal_ancha",
+            "confianza": 0.658,
+            "lat": 19.357089,
+            "lon": -99.172864,
+            "google_maps": "https://www.google.com/maps?q=19.357089,-99.172864",
+            "frame": 261,
+            "tiempo_segundos": 8.7,
+            "tiempo_formato": "00:08",
+            "fecha_deteccion": "2026-03-24 10:38:06"
+        }
+    ]
+}

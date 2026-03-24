@@ -7,31 +7,23 @@ from typing import Optional, Dict
 import os
 from datetime import datetime
 
-# ================================
-# CONFIGURACIONES
-# ================================
 
 MODEL_PATH = "./best.pt"
 VIDEO_PATH = "./videos-m/test2.mov"
 OUTPUT_PATH = "output_con_metadatos.MOV"
 JSON_PATH = "detecciones_baches.json"
 
-# GPS inicial (se actualizará con metadatos reales si existen)
+
 gps_lat_actual = 19.432600
 gps_lon_actual = -99.133200
 
-# Para evitar duplicados - usamos un diccionario con más información
-baches_detectados = {}  # clave: id, valor: dict con info de primera detección
+
+baches_detectados = {}  
 detecciones_json = []
 
-# Umbral de distancia mínima entre detecciones del mismo bache (en grados)
-# Aproximadamente 2 metros (0.000018 grados ≈ 2 metros)
+
 UMBRAL_DISTANCIA_GPS = 0.00002
 
-
-# ================================
-# DMS → DECIMAL
-# ================================
 def dms_a_decimal(dms_str: str) -> Optional[float]:
     """
     Convierte coordenadas en formato DMS (grados/minutos/segundos) a decimal.
@@ -59,9 +51,8 @@ def dms_a_decimal(dms_str: str) -> Optional[float]:
     return round(decimal, 6)
 
 
-# ================================
-# SIMULAR MOVIMIENTO DESDE GPS REAL
-# ================================
+
+
 def simular_gps(lat, lon, paso=0.00002):
     """
     Simula movimiento del vehículo cuando no hay GPS real.
@@ -71,9 +62,7 @@ def simular_gps(lat, lon, paso=0.00002):
     return round(lat, 6), round(lon, 6)
 
 
-# ================================
-# GENERAR ENLACE DE GOOGLE MAPS
-# ================================
+
 def generar_enlace_google_maps(lat: float, lon: float) -> str:
     """
     Genera un enlace de Google Maps para la ubicación del bache.
@@ -81,9 +70,7 @@ def generar_enlace_google_maps(lat: float, lon: float) -> str:
     return f"https://www.google.com/maps?q={lat},{lon}"
 
 
-# ================================
-# VERIFICAR SI ES EL MISMO BACHE (POR PROXIMIDAD)
-# ================================
+
 def es_mismo_bache(lat1: float, lon1: float, lat2: float, lon2: float) -> bool:
     """
     Verifica si dos coordenadas corresponden al mismo bache
@@ -94,9 +81,7 @@ def es_mismo_bache(lat1: float, lon1: float, lat2: float, lon2: float) -> bool:
     return diff_lat < UMBRAL_DISTANCIA_GPS and diff_lon < UMBRAL_DISTANCIA_GPS
 
 
-# ================================
-# EXTRAER METADATOS
-# ================================
+
 def extraer_metadatos(video_path: str) -> Optional[Dict]:
     """
     Extrae metadatos del video usando exiftool.
@@ -134,9 +119,6 @@ def extraer_metadatos(video_path: str) -> Optional[Dict]:
         return None
 
 
-# ================================
-# PROCESAR VIDEO
-# ================================
 def procesar_video():
     """
     Función principal que procesa el video y detecta baches.
@@ -147,9 +129,6 @@ def procesar_video():
     print("INICIANDO PROCESAMIENTO DE VIDEO")
     print("="*50)
 
-    # ========================
-    # METADATOS
-    # ========================
 
     metadata = extraer_metadatos(VIDEO_PATH)
 
@@ -160,7 +139,6 @@ def procesar_video():
             if v:
                 print(f"{k}: {v}")
 
-        # Intentar obtener GPS real de los metadatos
         if metadata.get("gps_latitud") and metadata.get("gps_longitud"):
             lat_decimal = dms_a_decimal(metadata["gps_latitud"])
             lon_decimal = dms_a_decimal(metadata["gps_longitud"])
@@ -177,10 +155,6 @@ def procesar_video():
         print("\n⚠️ No se pudieron extraer metadatos, se usará simulación")
 
     print("="*50 + "\n")
-
-    # ========================
-    # MODELO YOLO
-    # ========================
 
     if not os.path.exists(MODEL_PATH):
         print(f"Error: No se encuentra el modelo en {MODEL_PATH}")
@@ -216,31 +190,28 @@ def procesar_video():
 
     frame_num = 0
 
-    # Configurar el tracking
+
     results = model.track(
         source=VIDEO_PATH,
         conf=0.01,
         persist=True,
         stream=True,
         classes=[0, 1, 2, 3, 4, 5, 6, 7],
-        verbose=False  # Reducir output
+        verbose=False  
     )
 
-    # ========================
-    # LOOP PRINCIPAL
-    # ========================
 
     print("Procesando video... (Presiona 'q' para detener)")
 
     for r in results:
         frame_num += 1
 
-        # Mostrar progreso cada 100 frames
+
         if frame_num % 100 == 0:
             progreso = (frame_num / total_frames) * 100
             print(f"Progreso: {progreso:.1f}% - Baches detectados: {len(baches_detectados)}")
 
-        # Actualizar GPS (simulado o real)
+
         gps_lat_actual, gps_lon_actual = simular_gps(
             gps_lat_actual,
             gps_lon_actual,
@@ -250,7 +221,7 @@ def procesar_video():
         tiempo_seg = frame_num / fps
         frame = r.orig_img
 
-        # Procesar detecciones
+
         if r.boxes is not None and r.boxes.id is not None:
             ids = r.boxes.id.int().cpu().tolist()
             boxes = r.boxes.xyxy.int().cpu().tolist()
@@ -259,25 +230,25 @@ def procesar_video():
 
             for box, id_bache, cls, conf in zip(boxes, ids, clases, confidences):
                 
-                # Verificar si el bache ya fue detectado
+
                 bache_nuevo = True
                 
                 if id_bache in baches_detectados:
                     bache_nuevo = False
                 else:
-                    # Verificar por proximidad GPS como respaldo
+
                     for bache_id, bache_info in baches_detectados.items():
                         if es_mismo_bache(
                             gps_lat_actual, gps_lon_actual,
                             bache_info['lat'], bache_info['lon']
                         ):
-                            # Es el mismo bache, actualizar referencia
+
                             baches_detectados[id_bache] = bache_info
                             bache_nuevo = False
                             break
 
                 if bache_nuevo:
-                    # Generar enlace de Google Maps
+
                     google_maps_link = generar_enlace_google_maps(gps_lat_actual, gps_lon_actual)
                     
                     deteccion = {
@@ -295,7 +266,7 @@ def procesar_video():
 
                     detecciones_json.append(deteccion)
                     
-                    # Guardar en el diccionario de baches detectados
+
                     baches_detectados[id_bache] = {
                         'lat': gps_lat_actual,
                         'lon': gps_lon_actual,
@@ -305,7 +276,6 @@ def procesar_video():
                     
                     print(f"✅ Nuevo bache detectado! ID: {id_bache}, Clase: {model.names[cls]}, Ubicación: {gps_lat_actual}, {gps_lon_actual}")
 
-                # Dibujar bounding box
                 x1, y1, x2, y2 = box
                 nombre = model.names[cls]
 
@@ -327,7 +297,7 @@ def procesar_video():
                     2
                 )
 
-        # Mostrar contador de baches en el frame
+
         total = len(baches_detectados)
         cv2.rectangle(frame, (20, 20), (380, 120), (0, 0, 0), -1)
         
@@ -358,20 +328,16 @@ def procesar_video():
             print("\n⏹️ Procesamiento detenido por el usuario")
             break
 
-    # Liberar recursos
+
     cap.release()
     out.release()
     cv2.destroyAllWindows()
-
-    # ========================
-    # GUARDAR RESULTADOS
-    # ========================
 
     print("\n" + "="*50)
     print("GUARDANDO RESULTADOS")
     print("="*50)
 
-    # Crear resumen
+
     resumen = {
         "metadata_video": metadata if metadata else {},
         "total_baches_unicos": len(baches_detectados),
@@ -380,7 +346,7 @@ def procesar_video():
         "detecciones": detecciones_json
     }
 
-    # Guardar JSON
+
     with open(JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(resumen, f, indent=4, ensure_ascii=False)
 
@@ -390,7 +356,7 @@ def procesar_video():
     print(f"📍 Total de baches únicos detectados: {len(baches_detectados)}")
     print(f"📝 Detecciones registradas: {len(detecciones_json)}")
     
-    # Mostrar primeros 5 baches como ejemplo
+
     if detecciones_json:
         print("\n📌 Primeros baches detectados:")
         for i, bache in enumerate(detecciones_json[:5]):
@@ -399,9 +365,7 @@ def procesar_video():
     print("\n✅ Procesamiento completado!")
 
 
-# ================================
-# MAIN
-# ================================
+
 if __name__ == "__main__":
     try:
         procesar_video()
