@@ -10,7 +10,7 @@ import numpy as np
 
 
 MODEL_PATH = "./best.pt"
-VIDEO_PATH = "./videos-m/test6.mov"
+VIDEO_PATH = "./videos-m/test7.mov"
 OUTPUT_PATH = "output_con_metadatos.MOV"
 JSON_PATH = "detecciones_baches_por_frame.json"
 

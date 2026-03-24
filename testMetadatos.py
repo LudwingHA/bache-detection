@@ -20,7 +20,7 @@ def extract_metadata_with_exiftool(video_file):
     
 
     print("Extrayendo metadatos completos...")
-    cmd = ["exiftool", "-j", "-G1", "-struct", "-api", "LargeFileSupport=1", video_file]
+    cmd = ["exiftool", "-j", "-G1", "-struct", "-api", "LargeFileSupport=1", "-ee", "-G3", "-n", video_file]
     
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, check=True)

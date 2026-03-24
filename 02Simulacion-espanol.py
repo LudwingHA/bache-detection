@@ -10,7 +10,7 @@ from datetime import datetime
 
 
 MODEL_PATH = "./best.pt"
-VIDEO_PATH = "./videos-m/test5.mp4"
+VIDEO_PATH = "./videos-m/test2.mov"
 OUTPUT_PATH = "output_con_metadatos.MOV"
 JSON_PATH = "detecciones_baches.json"
 

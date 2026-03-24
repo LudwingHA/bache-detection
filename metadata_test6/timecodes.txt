@@ -1,4 +1,0 @@
-=== TIMECODES Y FECHAS ===
-Date/Time Original              : 2026:03:19 06:42:38
-Create Date                     : 2026:03:18 22:42:38
-Modify Date                     : 2026:03:18 22:42:38
