@@ -1,0 +1,2234 @@
+[
+    {
+        "segundo": 0,
+        "latitud": 19.38987,
+        "longitud": -99.03481,
+        "velocidad": 45.112868,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:34Z"
+    },
+    {
+        "segundo": 1,
+        "latitud": 19.38977,
+        "longitud": -99.034873,
+        "velocidad": 46.748184,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:35Z"
+    },
+    {
+        "segundo": 2,
+        "latitud": 19.38967,
+        "longitud": -99.034931,
+        "velocidad": 48.005692,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:36Z"
+    },
+    {
+        "segundo": 3,
+        "latitud": 19.38956,
+        "longitud": -99.034986,
+        "velocidad": 44.990636,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:37Z"
+    },
+    {
+        "segundo": 4,
+        "latitud": 19.38947,
+        "longitud": -99.035043,
+        "velocidad": 39.47538,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:38Z"
+    },
+    {
+        "segundo": 5,
+        "latitud": 19.38939,
+        "longitud": -99.035088,
+        "velocidad": 32.293324,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:39Z"
+    },
+    {
+        "segundo": 6,
+        "latitud": 19.38934,
+        "longitud": -99.035116,
+        "velocidad": 18.7978,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:40Z"
+    },
+    {
+        "segundo": 7,
+        "latitud": 19.38931,
+        "longitud": -99.035131,
+        "velocidad": 7.669132,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:41Z"
+    },
+    {
+        "segundo": 8,
+        "latitud": 19.38931,
+        "longitud": -99.035138,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:42Z"
+    },
+    {
+        "segundo": 9,
+        "latitud": 19.38931,
+        "longitud": -99.03514,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:43Z"
+    },
+    {
+        "segundo": 10,
+        "latitud": 19.38931,
+        "longitud": -99.035141,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:44Z"
+    },
+    {
+        "segundo": 11,
+        "latitud": 19.38931,
+        "longitud": -99.035143,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:45Z"
+    },
+    {
+        "segundo": 12,
+        "latitud": 19.38931,
+        "longitud": -99.035146,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:46Z"
+    },
+    {
+        "segundo": 13,
+        "latitud": 19.3893,
+        "longitud": -99.035148,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:47Z"
+    },
+    {
+        "segundo": 14,
+        "latitud": 19.38929,
+        "longitud": -99.035155,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:48Z"
+    },
+    {
+        "segundo": 15,
+        "latitud": 19.38928,
+        "longitud": -99.035159,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:49Z"
+    },
+    {
+        "segundo": 16,
+        "latitud": 19.38928,
+        "longitud": -99.035163,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:50Z"
+    },
+    {
+        "segundo": 17,
+        "latitud": 19.38927,
+        "longitud": -99.035166,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:51Z"
+    },
+    {
+        "segundo": 18,
+        "latitud": 19.38926,
+        "longitud": -99.035171,
+        "velocidad": 3.5651,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:52Z"
+    },
+    {
+        "segundo": 19,
+        "latitud": 19.38925,
+        "longitud": -99.035178,
+        "velocidad": 5.007808,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:53Z"
+    },
+    {
+        "segundo": 20,
+        "latitud": 19.38923,
+        "longitud": -99.035186,
+        "velocidad": 9.254444,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:54Z"
+    },
+    {
+        "segundo": 21,
+        "latitud": 19.38921,
+        "longitud": -99.0352,
+        "velocidad": 12.304688,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:55Z"
+    },
+    {
+        "segundo": 22,
+        "latitud": 19.38918,
+        "longitud": -99.035216,
+        "velocidad": 12.006516,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:56Z"
+    },
+    {
+        "segundo": 23,
+        "latitud": 19.38916,
+        "longitud": -99.035231,
+        "velocidad": 10.850868,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:57Z"
+    },
+    {
+        "segundo": 24,
+        "latitud": 19.38914,
+        "longitud": -99.035246,
+        "velocidad": 9.702628,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:58Z"
+    },
+    {
+        "segundo": 25,
+        "latitud": 19.38912,
+        "longitud": -99.03526,
+        "velocidad": 8.076572,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:15:59Z"
+    },
+    {
+        "segundo": 26,
+        "latitud": 19.3891,
+        "longitud": -99.03527,
+        "velocidad": 9.163696,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:00Z"
+    },
+    {
+        "segundo": 27,
+        "latitud": 19.38908,
+        "longitud": -99.03528,
+        "velocidad": 9.109988,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:01Z"
+    },
+    {
+        "segundo": 28,
+        "latitud": 19.38906,
+        "longitud": -99.035288,
+        "velocidad": 6.772764,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:02Z"
+    },
+    {
+        "segundo": 29,
+        "latitud": 19.38905,
+        "longitud": -99.035293,
+        "velocidad": 5.294868,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:03Z"
+    },
+    {
+        "segundo": 30,
+        "latitud": 19.38904,
+        "longitud": -99.035298,
+        "velocidad": 4.331828,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:04Z"
+    },
+    {
+        "segundo": 31,
+        "latitud": 19.38903,
+        "longitud": -99.035303,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:05Z"
+    },
+    {
+        "segundo": 32,
+        "latitud": 19.38903,
+        "longitud": -99.035303,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:06Z"
+    },
+    {
+        "segundo": 33,
+        "latitud": 19.38903,
+        "longitud": -99.035303,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:07Z"
+    },
+    {
+        "segundo": 34,
+        "latitud": 19.38903,
+        "longitud": -99.035303,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:08Z"
+    },
+    {
+        "segundo": 35,
+        "latitud": 19.38903,
+        "longitud": -99.035301,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:09Z"
+    },
+    {
+        "segundo": 36,
+        "latitud": 19.38903,
+        "longitud": -99.035301,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:10Z"
+    },
+    {
+        "segundo": 37,
+        "latitud": 19.38903,
+        "longitud": -99.0353,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:11Z"
+    },
+    {
+        "segundo": 38,
+        "latitud": 19.38903,
+        "longitud": -99.0353,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:12Z"
+    },
+    {
+        "segundo": 39,
+        "latitud": 19.38903,
+        "longitud": -99.0353,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:13Z"
+    },
+    {
+        "segundo": 40,
+        "latitud": 19.38903,
+        "longitud": -99.0353,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:14Z"
+    },
+    {
+        "segundo": 41,
+        "latitud": 19.38902,
+        "longitud": -99.035303,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:15Z"
+    },
+    {
+        "segundo": 42,
+        "latitud": 19.38902,
+        "longitud": -99.035298,
+        "velocidad": 1.964972,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:16Z"
+    },
+    {
+        "segundo": 43,
+        "latitud": 19.38902,
+        "longitud": -99.035303,
+        "velocidad": 6.170864,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:17Z"
+    },
+    {
+        "segundo": 44,
+        "latitud": 19.389,
+        "longitud": -99.035321,
+        "velocidad": 10.79716,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:18Z"
+    },
+    {
+        "segundo": 45,
+        "latitud": 19.38897,
+        "longitud": -99.035341,
+        "velocidad": 14.571536,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:19Z"
+    },
+    {
+        "segundo": 46,
+        "latitud": 19.38894,
+        "longitud": -99.035363,
+        "velocidad": 17.562516,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:20Z"
+    },
+    {
+        "segundo": 47,
+        "latitud": 19.3889,
+        "longitud": -99.035385,
+        "velocidad": 17.984772,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:21Z"
+    },
+    {
+        "segundo": 48,
+        "latitud": 19.38886,
+        "longitud": -99.035406,
+        "velocidad": 18.1033,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:22Z"
+    },
+    {
+        "segundo": 49,
+        "latitud": 19.38881,
+        "longitud": -99.035431,
+        "velocidad": 19.994192,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:23Z"
+    },
+    {
+        "segundo": 50,
+        "latitud": 19.38876,
+        "longitud": -99.035456,
+        "velocidad": 22.925908,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:24Z"
+    },
+    {
+        "segundo": 51,
+        "latitud": 19.38871,
+        "longitud": -99.035486,
+        "velocidad": 25.366844,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:25Z"
+    },
+    {
+        "segundo": 52,
+        "latitud": 19.38865,
+        "longitud": -99.035516,
+        "velocidad": 24.350096,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:26Z"
+    },
+    {
+        "segundo": 53,
+        "latitud": 19.3886,
+        "longitud": -99.035546,
+        "velocidad": 24.281572,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:27Z"
+    },
+    {
+        "segundo": 54,
+        "latitud": 19.38855,
+        "longitud": -99.035575,
+        "velocidad": 22.883312,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:28Z"
+    },
+    {
+        "segundo": 55,
+        "latitud": 19.3885,
+        "longitud": -99.035605,
+        "velocidad": 21.09428,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:29Z"
+    },
+    {
+        "segundo": 56,
+        "latitud": 19.38846,
+        "longitud": -99.035628,
+        "velocidad": 14.36226,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:30Z"
+    },
+    {
+        "segundo": 57,
+        "latitud": 19.38844,
+        "longitud": -99.035645,
+        "velocidad": 11.236084,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:31Z"
+    },
+    {
+        "segundo": 58,
+        "latitud": 19.38841,
+        "longitud": -99.035656,
+        "velocidad": 10.284156,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:32Z"
+    },
+    {
+        "segundo": 59,
+        "latitud": 19.3884,
+        "longitud": -99.035666,
+        "velocidad": 9.541504,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:33Z"
+    },
+    {
+        "segundo": 60,
+        "latitud": 19.38838,
+        "longitud": -99.035676,
+        "velocidad": 9.441496,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:34Z"
+    },
+    {
+        "segundo": 61,
+        "latitud": 19.38836,
+        "longitud": -99.035683,
+        "velocidad": 7.895076,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:35Z"
+    },
+    {
+        "segundo": 62,
+        "latitud": 19.38834,
+        "longitud": -99.035691,
+        "velocidad": 8.763664,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:36Z"
+    },
+    {
+        "segundo": 63,
+        "latitud": 19.38832,
+        "longitud": -99.035703,
+        "velocidad": 10.12118,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:37Z"
+    },
+    {
+        "segundo": 64,
+        "latitud": 19.38829,
+        "longitud": -99.035721,
+        "velocidad": 13.01956,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:38Z"
+    },
+    {
+        "segundo": 65,
+        "latitud": 19.38826,
+        "longitud": -99.03574,
+        "velocidad": 11.65834,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:39Z"
+    },
+    {
+        "segundo": 66,
+        "latitud": 19.38823,
+        "longitud": -99.035759,
+        "velocidad": 11.660192,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:40Z"
+    },
+    {
+        "segundo": 67,
+        "latitud": 19.3882,
+        "longitud": -99.035775,
+        "velocidad": 12.450996,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:41Z"
+    },
+    {
+        "segundo": 68,
+        "latitud": 19.38817,
+        "longitud": -99.035788,
+        "velocidad": 13.791844,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:42Z"
+    },
+    {
+        "segundo": 69,
+        "latitud": 19.38814,
+        "longitud": -99.035803,
+        "velocidad": 14.277068,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:43Z"
+    },
+    {
+        "segundo": 70,
+        "latitud": 19.3881,
+        "longitud": -99.035818,
+        "velocidad": 14.412264,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:44Z"
+    },
+    {
+        "segundo": 71,
+        "latitud": 19.38807,
+        "longitud": -99.035833,
+        "velocidad": 15.03824,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:45Z"
+    },
+    {
+        "segundo": 72,
+        "latitud": 19.38803,
+        "longitud": -99.035849,
+        "velocidad": 15.977204,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:46Z"
+    },
+    {
+        "segundo": 73,
+        "latitud": 19.38799,
+        "longitud": -99.035868,
+        "velocidad": 17.434728,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:47Z"
+    },
+    {
+        "segundo": 74,
+        "latitud": 19.38795,
+        "longitud": -99.03589,
+        "velocidad": 16.98284,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:48Z"
+    },
+    {
+        "segundo": 75,
+        "latitud": 19.38792,
+        "longitud": -99.03591,
+        "velocidad": 14.345592,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:49Z"
+    },
+    {
+        "segundo": 76,
+        "latitud": 19.38789,
+        "longitud": -99.035926,
+        "velocidad": 13.558492,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:50Z"
+    },
+    {
+        "segundo": 77,
+        "latitud": 19.38786,
+        "longitud": -99.035941,
+        "velocidad": 12.904736,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:51Z"
+    },
+    {
+        "segundo": 78,
+        "latitud": 19.38783,
+        "longitud": -99.035958,
+        "velocidad": 13.791844,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:52Z"
+    },
+    {
+        "segundo": 79,
+        "latitud": 19.38779,
+        "longitud": -99.035978,
+        "velocidad": 14.764144,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:53Z"
+    },
+    {
+        "segundo": 80,
+        "latitud": 19.38776,
+        "longitud": -99.035998,
+        "velocidad": 14.869708,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:54Z"
+    },
+    {
+        "segundo": 81,
+        "latitud": 19.38772,
+        "longitud": -99.036016,
+        "velocidad": 15.169732,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:55Z"
+    },
+    {
+        "segundo": 82,
+        "latitud": 19.38769,
+        "longitud": -99.036035,
+        "velocidad": 15.147508,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:56Z"
+    },
+    {
+        "segundo": 83,
+        "latitud": 19.38765,
+        "longitud": -99.036055,
+        "velocidad": 15.053056,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:57Z"
+    },
+    {
+        "segundo": 84,
+        "latitud": 19.38762,
+        "longitud": -99.03607,
+        "velocidad": 13.086232,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:58Z"
+    },
+    {
+        "segundo": 85,
+        "latitud": 19.38759,
+        "longitud": -99.036084,
+        "velocidad": 11.452768,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:16:59Z"
+    },
+    {
+        "segundo": 86,
+        "latitud": 19.38757,
+        "longitud": -99.036096,
+        "velocidad": 10.224892,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:00Z"
+    },
+    {
+        "segundo": 87,
+        "latitud": 19.38755,
+        "longitud": -99.036108,
+        "velocidad": 10.226744,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:01Z"
+    },
+    {
+        "segundo": 88,
+        "latitud": 19.38752,
+        "longitud": -99.036119,
+        "velocidad": 10.319344,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:02Z"
+    },
+    {
+        "segundo": 89,
+        "latitud": 19.3875,
+        "longitud": -99.036135,
+        "velocidad": 9.17666,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:03Z"
+    },
+    {
+        "segundo": 90,
+        "latitud": 19.38749,
+        "longitud": -99.036145,
+        "velocidad": 7.385776,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:04Z"
+    },
+    {
+        "segundo": 91,
+        "latitud": 19.38747,
+        "longitud": -99.036151,
+        "velocidad": 5.404136,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:05Z"
+    },
+    {
+        "segundo": 92,
+        "latitud": 19.38746,
+        "longitud": -99.036158,
+        "velocidad": 5.289312,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:06Z"
+    },
+    {
+        "segundo": 93,
+        "latitud": 19.38745,
+        "longitud": -99.036163,
+        "velocidad": 5.189304,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:07Z"
+    },
+    {
+        "segundo": 94,
+        "latitud": 19.38744,
+        "longitud": -99.03617,
+        "velocidad": 5.19486,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:08Z"
+    },
+    {
+        "segundo": 95,
+        "latitud": 19.38743,
+        "longitud": -99.036176,
+        "velocidad": 5.17634,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:09Z"
+    },
+    {
+        "segundo": 96,
+        "latitud": 19.38743,
+        "longitud": -99.036184,
+        "velocidad": 5.226344,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:10Z"
+    },
+    {
+        "segundo": 97,
+        "latitud": 19.38741,
+        "longitud": -99.036193,
+        "velocidad": 6.644976,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:11Z"
+    },
+    {
+        "segundo": 98,
+        "latitud": 19.3874,
+        "longitud": -99.0362,
+        "velocidad": 5.841208,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:12Z"
+    },
+    {
+        "segundo": 99,
+        "latitud": 19.38738,
+        "longitud": -99.036208,
+        "velocidad": 4.915208,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:13Z"
+    },
+    {
+        "segundo": 100,
+        "latitud": 19.38737,
+        "longitud": -99.036214,
+        "velocidad": 4.613332,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:14Z"
+    },
+    {
+        "segundo": 101,
+        "latitud": 19.38736,
+        "longitud": -99.036221,
+        "velocidad": 5.63008,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:15Z"
+    },
+    {
+        "segundo": 102,
+        "latitud": 19.38735,
+        "longitud": -99.036228,
+        "velocidad": 6.239388,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:16Z"
+    },
+    {
+        "segundo": 103,
+        "latitud": 19.38734,
+        "longitud": -99.036233,
+        "velocidad": 5.317092,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:17Z"
+    },
+    {
+        "segundo": 104,
+        "latitud": 19.38733,
+        "longitud": -99.036238,
+        "velocidad": 3.902164,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:18Z"
+    },
+    {
+        "segundo": 105,
+        "latitud": 19.38732,
+        "longitud": -99.036241,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:19Z"
+    },
+    {
+        "segundo": 106,
+        "latitud": 19.38732,
+        "longitud": -99.036241,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:20Z"
+    },
+    {
+        "segundo": 107,
+        "latitud": 19.38731,
+        "longitud": -99.036243,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:21Z"
+    },
+    {
+        "segundo": 108,
+        "latitud": 19.38731,
+        "longitud": -99.036241,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:22Z"
+    },
+    {
+        "segundo": 109,
+        "latitud": 19.38731,
+        "longitud": -99.036241,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:23Z"
+    },
+    {
+        "segundo": 110,
+        "latitud": 19.38731,
+        "longitud": -99.036239,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:24Z"
+    },
+    {
+        "segundo": 111,
+        "latitud": 19.38731,
+        "longitud": -99.036241,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:25Z"
+    },
+    {
+        "segundo": 112,
+        "latitud": 19.38731,
+        "longitud": -99.036241,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:26Z"
+    },
+    {
+        "segundo": 113,
+        "latitud": 19.38731,
+        "longitud": -99.036243,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:27Z"
+    },
+    {
+        "segundo": 114,
+        "latitud": 19.3873,
+        "longitud": -99.036248,
+        "velocidad": 7.48208,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:28Z"
+    },
+    {
+        "segundo": 115,
+        "latitud": 19.38728,
+        "longitud": -99.036258,
+        "velocidad": 10.354532,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:29Z"
+    },
+    {
+        "segundo": 116,
+        "latitud": 19.38726,
+        "longitud": -99.036271,
+        "velocidad": 11.595372,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:30Z"
+    },
+    {
+        "segundo": 117,
+        "latitud": 19.38723,
+        "longitud": -99.03629,
+        "velocidad": 14.410412,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:31Z"
+    },
+    {
+        "segundo": 118,
+        "latitud": 19.3872,
+        "longitud": -99.036311,
+        "velocidad": 16.642072,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:32Z"
+    },
+    {
+        "segundo": 119,
+        "latitud": 19.38716,
+        "longitud": -99.03634,
+        "velocidad": 18.681124,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:33Z"
+    },
+    {
+        "segundo": 120,
+        "latitud": 19.38712,
+        "longitud": -99.036371,
+        "velocidad": 19.660832,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:34Z"
+    },
+    {
+        "segundo": 121,
+        "latitud": 19.38708,
+        "longitud": -99.036403,
+        "velocidad": 20.977604,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:35Z"
+    },
+    {
+        "segundo": 122,
+        "latitud": 19.38704,
+        "longitud": -99.036435,
+        "velocidad": 21.683216,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:36Z"
+    },
+    {
+        "segundo": 123,
+        "latitud": 19.38699,
+        "longitud": -99.036465,
+        "velocidad": 22.173996,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:37Z"
+    },
+    {
+        "segundo": 124,
+        "latitud": 19.38694,
+        "longitud": -99.036491,
+        "velocidad": 19.105232,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:38Z"
+    },
+    {
+        "segundo": 125,
+        "latitud": 19.3869,
+        "longitud": -99.036514,
+        "velocidad": 16.414276,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:39Z"
+    },
+    {
+        "segundo": 126,
+        "latitud": 19.38687,
+        "longitud": -99.036535,
+        "velocidad": 14.891932,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:40Z"
+    },
+    {
+        "segundo": 127,
+        "latitud": 19.38684,
+        "longitud": -99.036551,
+        "velocidad": 13.580716,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:41Z"
+    },
+    {
+        "segundo": 128,
+        "latitud": 19.38681,
+        "longitud": -99.036569,
+        "velocidad": 14.817852,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:42Z"
+    },
+    {
+        "segundo": 129,
+        "latitud": 19.38677,
+        "longitud": -99.036588,
+        "velocidad": 15.617916,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:43Z"
+    },
+    {
+        "segundo": 130,
+        "latitud": 19.38674,
+        "longitud": -99.036606,
+        "velocidad": 15.175288,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:44Z"
+    },
+    {
+        "segundo": 131,
+        "latitud": 19.38671,
+        "longitud": -99.036626,
+        "velocidad": 16.951356,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:45Z"
+    },
+    {
+        "segundo": 132,
+        "latitud": 19.38667,
+        "longitud": -99.036651,
+        "velocidad": 18.525556,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:46Z"
+    },
+    {
+        "segundo": 133,
+        "latitud": 19.38663,
+        "longitud": -99.036676,
+        "velocidad": 18.818172,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:47Z"
+    },
+    {
+        "segundo": 134,
+        "latitud": 19.38659,
+        "longitud": -99.036703,
+        "velocidad": 18.447772,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:48Z"
+    },
+    {
+        "segundo": 135,
+        "latitud": 19.38654,
+        "longitud": -99.03673,
+        "velocidad": 19.349696,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:49Z"
+    },
+    {
+        "segundo": 136,
+        "latitud": 19.3865,
+        "longitud": -99.03676,
+        "velocidad": 21.225772,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:50Z"
+    },
+    {
+        "segundo": 137,
+        "latitud": 19.38645,
+        "longitud": -99.03679,
+        "velocidad": 23.929692,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:51Z"
+    },
+    {
+        "segundo": 138,
+        "latitud": 19.38639,
+        "longitud": -99.036826,
+        "velocidad": 26.74288,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:52Z"
+    },
+    {
+        "segundo": 139,
+        "latitud": 19.38633,
+        "longitud": -99.036863,
+        "velocidad": 28.109656,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:53Z"
+    },
+    {
+        "segundo": 140,
+        "latitud": 19.38627,
+        "longitud": -99.0369,
+        "velocidad": 29.48384,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:54Z"
+    },
+    {
+        "segundo": 141,
+        "latitud": 19.38621,
+        "longitud": -99.036936,
+        "velocidad": 28.7986,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:55Z"
+    },
+    {
+        "segundo": 142,
+        "latitud": 19.38615,
+        "longitud": -99.036975,
+        "velocidad": 29.917208,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:56Z"
+    },
+    {
+        "segundo": 143,
+        "latitud": 19.38608,
+        "longitud": -99.037015,
+        "velocidad": 29.583848,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:57Z"
+    },
+    {
+        "segundo": 144,
+        "latitud": 19.38602,
+        "longitud": -99.037051,
+        "velocidad": 27.000308,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:58Z"
+    },
+    {
+        "segundo": 145,
+        "latitud": 19.38596,
+        "longitud": -99.037088,
+        "velocidad": 27.46516,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:17:59Z"
+    },
+    {
+        "segundo": 146,
+        "latitud": 19.3859,
+        "longitud": -99.037125,
+        "velocidad": 25.894664,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:00Z"
+    },
+    {
+        "segundo": 147,
+        "latitud": 19.38585,
+        "longitud": -99.037156,
+        "velocidad": 23.235192,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:01Z"
+    },
+    {
+        "segundo": 148,
+        "latitud": 19.3858,
+        "longitud": -99.037185,
+        "velocidad": 20.803516,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:02Z"
+    },
+    {
+        "segundo": 149,
+        "latitud": 19.38576,
+        "longitud": -99.037208,
+        "velocidad": 16.669852,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:03Z"
+    },
+    {
+        "segundo": 150,
+        "latitud": 19.38572,
+        "longitud": -99.037229,
+        "velocidad": 15.443828,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:04Z"
+    },
+    {
+        "segundo": 151,
+        "latitud": 19.38569,
+        "longitud": -99.037246,
+        "velocidad": 12.030592,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:05Z"
+    },
+    {
+        "segundo": 152,
+        "latitud": 19.38567,
+        "longitud": -99.037261,
+        "velocidad": 11.215712,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:06Z"
+    },
+    {
+        "segundo": 153,
+        "latitud": 19.38564,
+        "longitud": -99.037275,
+        "velocidad": 11.291644,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:07Z"
+    },
+    {
+        "segundo": 154,
+        "latitud": 19.38562,
+        "longitud": -99.037288,
+        "velocidad": 9.56558,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:08Z"
+    },
+    {
+        "segundo": 155,
+        "latitud": 19.3856,
+        "longitud": -99.037298,
+        "velocidad": 7.248728,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:09Z"
+    },
+    {
+        "segundo": 156,
+        "latitud": 19.38559,
+        "longitud": -99.037305,
+        "velocidad": 7.24132,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:10Z"
+    },
+    {
+        "segundo": 157,
+        "latitud": 19.38557,
+        "longitud": -99.037311,
+        "velocidad": 7.143164,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:11Z"
+    },
+    {
+        "segundo": 158,
+        "latitud": 19.38556,
+        "longitud": -99.037318,
+        "velocidad": 5.248568,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:12Z"
+    },
+    {
+        "segundo": 159,
+        "latitud": 19.38556,
+        "longitud": -99.037323,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:13Z"
+    },
+    {
+        "segundo": 160,
+        "latitud": 19.38555,
+        "longitud": -99.037326,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:14Z"
+    },
+    {
+        "segundo": 161,
+        "latitud": 19.38555,
+        "longitud": -99.03733,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:15Z"
+    },
+    {
+        "segundo": 162,
+        "latitud": 19.38555,
+        "longitud": -99.037328,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:16Z"
+    },
+    {
+        "segundo": 163,
+        "latitud": 19.38555,
+        "longitud": -99.037328,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:17Z"
+    },
+    {
+        "segundo": 164,
+        "latitud": 19.38554,
+        "longitud": -99.037328,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:18Z"
+    },
+    {
+        "segundo": 165,
+        "latitud": 19.38554,
+        "longitud": -99.037328,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:19Z"
+    },
+    {
+        "segundo": 166,
+        "latitud": 19.38554,
+        "longitud": -99.037326,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:20Z"
+    },
+    {
+        "segundo": 167,
+        "latitud": 19.38555,
+        "longitud": -99.037326,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:21Z"
+    },
+    {
+        "segundo": 168,
+        "latitud": 19.38555,
+        "longitud": -99.037326,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:22Z"
+    },
+    {
+        "segundo": 169,
+        "latitud": 19.38555,
+        "longitud": -99.037326,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:23Z"
+    },
+    {
+        "segundo": 170,
+        "latitud": 19.38555,
+        "longitud": -99.037326,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:24Z"
+    },
+    {
+        "segundo": 171,
+        "latitud": 19.38555,
+        "longitud": -99.037328,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:25Z"
+    },
+    {
+        "segundo": 172,
+        "latitud": 19.38555,
+        "longitud": -99.037326,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:26Z"
+    },
+    {
+        "segundo": 173,
+        "latitud": 19.38555,
+        "longitud": -99.037324,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:27Z"
+    },
+    {
+        "segundo": 174,
+        "latitud": 19.38555,
+        "longitud": -99.037323,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:28Z"
+    },
+    {
+        "segundo": 175,
+        "latitud": 19.38555,
+        "longitud": -99.037323,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:29Z"
+    },
+    {
+        "segundo": 176,
+        "latitud": 19.38555,
+        "longitud": -99.037323,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:30Z"
+    },
+    {
+        "segundo": 177,
+        "latitud": 19.38555,
+        "longitud": -99.037323,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:31Z"
+    },
+    {
+        "segundo": 178,
+        "latitud": 19.38555,
+        "longitud": -99.037323,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:32Z"
+    },
+    {
+        "segundo": 179,
+        "latitud": 19.38555,
+        "longitud": -99.037323,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:33Z"
+    },
+    {
+        "segundo": 180,
+        "latitud": 19.38555,
+        "longitud": -99.037323,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:34Z"
+    },
+    {
+        "segundo": 181,
+        "latitud": 19.38555,
+        "longitud": -99.037321,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:35Z"
+    },
+    {
+        "segundo": 182,
+        "latitud": 19.38555,
+        "longitud": -99.037319,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:36Z"
+    },
+    {
+        "segundo": 183,
+        "latitud": 19.38555,
+        "longitud": -99.037319,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:37Z"
+    },
+    {
+        "segundo": 184,
+        "latitud": 19.38555,
+        "longitud": -99.037318,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:38Z"
+    },
+    {
+        "segundo": 185,
+        "latitud": 19.38555,
+        "longitud": -99.037316,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:39Z"
+    },
+    {
+        "segundo": 186,
+        "latitud": 19.38555,
+        "longitud": -99.037316,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:40Z"
+    },
+    {
+        "segundo": 187,
+        "latitud": 19.38555,
+        "longitud": -99.037315,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:41Z"
+    },
+    {
+        "segundo": 188,
+        "latitud": 19.38555,
+        "longitud": -99.037313,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:42Z"
+    },
+    {
+        "segundo": 189,
+        "latitud": 19.38555,
+        "longitud": -99.037313,
+        "velocidad": 3.07432,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:43Z"
+    },
+    {
+        "segundo": 190,
+        "latitud": 19.38555,
+        "longitud": -99.037318,
+        "velocidad": 6.783876,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:44Z"
+    },
+    {
+        "segundo": 191,
+        "latitud": 19.38553,
+        "longitud": -99.037331,
+        "velocidad": 10.950876,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:45Z"
+    },
+    {
+        "segundo": 192,
+        "latitud": 19.3855,
+        "longitud": -99.03735,
+        "velocidad": 13.819624,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:46Z"
+    },
+    {
+        "segundo": 193,
+        "latitud": 19.38547,
+        "longitud": -99.03737,
+        "velocidad": 16.703188,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:47Z"
+    },
+    {
+        "segundo": 194,
+        "latitud": 19.38543,
+        "longitud": -99.037395,
+        "velocidad": 18.753352,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:48Z"
+    },
+    {
+        "segundo": 195,
+        "latitud": 19.38539,
+        "longitud": -99.037423,
+        "velocidad": 20.82574,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:49Z"
+    },
+    {
+        "segundo": 196,
+        "latitud": 19.38534,
+        "longitud": -99.03745,
+        "velocidad": 19.812696,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:50Z"
+    },
+    {
+        "segundo": 197,
+        "latitud": 19.3853,
+        "longitud": -99.037478,
+        "velocidad": 21.042424,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:51Z"
+    },
+    {
+        "segundo": 198,
+        "latitud": 19.38525,
+        "longitud": -99.037506,
+        "velocidad": 21.433196,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:52Z"
+    },
+    {
+        "segundo": 199,
+        "latitud": 19.3852,
+        "longitud": -99.037536,
+        "velocidad": 23.211116,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:53Z"
+    },
+    {
+        "segundo": 200,
+        "latitud": 19.38515,
+        "longitud": -99.037568,
+        "velocidad": 23.568552,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:54Z"
+    },
+    {
+        "segundo": 201,
+        "latitud": 19.3851,
+        "longitud": -99.0376,
+        "velocidad": 23.018508,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:55Z"
+    },
+    {
+        "segundo": 202,
+        "latitud": 19.38505,
+        "longitud": -99.037631,
+        "velocidad": 24.89088,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:56Z"
+    },
+    {
+        "segundo": 203,
+        "latitud": 19.385,
+        "longitud": -99.037665,
+        "velocidad": 24.072296,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:57Z"
+    },
+    {
+        "segundo": 204,
+        "latitud": 19.38494,
+        "longitud": -99.0377,
+        "velocidad": 24.209344,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:58Z"
+    },
+    {
+        "segundo": 205,
+        "latitud": 19.38489,
+        "longitud": -99.037733,
+        "velocidad": 24.801984,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:18:59Z"
+    },
+    {
+        "segundo": 206,
+        "latitud": 19.38484,
+        "longitud": -99.037766,
+        "velocidad": 24.055628,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:00Z"
+    },
+    {
+        "segundo": 207,
+        "latitud": 19.38479,
+        "longitud": -99.0378,
+        "velocidad": 24.592708,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:01Z"
+    },
+    {
+        "segundo": 208,
+        "latitud": 19.38473,
+        "longitud": -99.037829,
+        "velocidad": 22.370308,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:02Z"
+    },
+    {
+        "segundo": 209,
+        "latitud": 19.38469,
+        "longitud": -99.037858,
+        "velocidad": 19.79788,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:03Z"
+    },
+    {
+        "segundo": 210,
+        "latitud": 19.38465,
+        "longitud": -99.037886,
+        "velocidad": 19.358956,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:04Z"
+    },
+    {
+        "segundo": 211,
+        "latitud": 19.38461,
+        "longitud": -99.03791,
+        "velocidad": 17.401392,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:05Z"
+    },
+    {
+        "segundo": 212,
+        "latitud": 19.38457,
+        "longitud": -99.037933,
+        "velocidad": 16.699484,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:06Z"
+    },
+    {
+        "segundo": 213,
+        "latitud": 19.38453,
+        "longitud": -99.037953,
+        "velocidad": 17.210636,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:07Z"
+    },
+    {
+        "segundo": 214,
+        "latitud": 19.38449,
+        "longitud": -99.037978,
+        "velocidad": 18.042184,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:08Z"
+    },
+    {
+        "segundo": 215,
+        "latitud": 19.38446,
+        "longitud": -99.038001,
+        "velocidad": 17.999588,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:09Z"
+    },
+    {
+        "segundo": 216,
+        "latitud": 19.38441,
+        "longitud": -99.038026,
+        "velocidad": 18.884844,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:10Z"
+    },
+    {
+        "segundo": 217,
+        "latitud": 19.38437,
+        "longitud": -99.038051,
+        "velocidad": 18.44592,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:11Z"
+    },
+    {
+        "segundo": 218,
+        "latitud": 19.38433,
+        "longitud": -99.038076,
+        "velocidad": 19.581196,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:12Z"
+    },
+    {
+        "segundo": 219,
+        "latitud": 19.38428,
+        "longitud": -99.038105,
+        "velocidad": 22.253632,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:13Z"
+    },
+    {
+        "segundo": 220,
+        "latitud": 19.38423,
+        "longitud": -99.038138,
+        "velocidad": 25.600196,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:14Z"
+    },
+    {
+        "segundo": 221,
+        "latitud": 19.38418,
+        "longitud": -99.038176,
+        "velocidad": 27.433676,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:15Z"
+    },
+    {
+        "segundo": 222,
+        "latitud": 19.38412,
+        "longitud": -99.038215,
+        "velocidad": 28.293004,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:16Z"
+    },
+    {
+        "segundo": 223,
+        "latitud": 19.38406,
+        "longitud": -99.038254,
+        "velocidad": 27.016976,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:17Z"
+    },
+    {
+        "segundo": 224,
+        "latitud": 19.38401,
+        "longitud": -99.038293,
+        "velocidad": 22.879608,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:18Z"
+    },
+    {
+        "segundo": 225,
+        "latitud": 19.38397,
+        "longitud": -99.03833,
+        "velocidad": 18.620008,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:19Z"
+    },
+    {
+        "segundo": 226,
+        "latitud": 19.38394,
+        "longitud": -99.038363,
+        "velocidad": 17.762532,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:20Z"
+    },
+    {
+        "segundo": 227,
+        "latitud": 19.38391,
+        "longitud": -99.038393,
+        "velocidad": 16.499468,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:21Z"
+    },
+    {
+        "segundo": 228,
+        "latitud": 19.38388,
+        "longitud": -99.038425,
+        "velocidad": 15.960536,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:22Z"
+    },
+    {
+        "segundo": 229,
+        "latitud": 19.38386,
+        "longitud": -99.038455,
+        "velocidad": 13.6585,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:23Z"
+    },
+    {
+        "segundo": 230,
+        "latitud": 19.38384,
+        "longitud": -99.038483,
+        "velocidad": 12.189864,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:24Z"
+    },
+    {
+        "segundo": 231,
+        "latitud": 19.38382,
+        "longitud": -99.03851,
+        "velocidad": 11.323128,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:25Z"
+    },
+    {
+        "segundo": 232,
+        "latitud": 19.38381,
+        "longitud": -99.038536,
+        "velocidad": 11.42684,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:26Z"
+    },
+    {
+        "segundo": 233,
+        "latitud": 19.38379,
+        "longitud": -99.038568,
+        "velocidad": 14.295588,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:27Z"
+    },
+    {
+        "segundo": 234,
+        "latitud": 19.38377,
+        "longitud": -99.038605,
+        "velocidad": 16.277228,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:28Z"
+    },
+    {
+        "segundo": 235,
+        "latitud": 19.38375,
+        "longitud": -99.038643,
+        "velocidad": 17.836612,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:29Z"
+    },
+    {
+        "segundo": 236,
+        "latitud": 19.38373,
+        "longitud": -99.03868,
+        "velocidad": 15.63088,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:30Z"
+    },
+    {
+        "segundo": 237,
+        "latitud": 19.38371,
+        "longitud": -99.03871,
+        "velocidad": 11.767608,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:31Z"
+    },
+    {
+        "segundo": 238,
+        "latitud": 19.3837,
+        "longitud": -99.03873,
+        "velocidad": 5.909732,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:32Z"
+    },
+    {
+        "segundo": 239,
+        "latitud": 19.3837,
+        "longitud": -99.03874,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:33Z"
+    },
+    {
+        "segundo": 240,
+        "latitud": 19.3837,
+        "longitud": -99.038745,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:34Z"
+    },
+    {
+        "segundo": 241,
+        "latitud": 19.38369,
+        "longitud": -99.03875,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:35Z"
+    },
+    {
+        "segundo": 242,
+        "latitud": 19.38369,
+        "longitud": -99.038755,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:36Z"
+    },
+    {
+        "segundo": 243,
+        "latitud": 19.38369,
+        "longitud": -99.038763,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:37Z"
+    },
+    {
+        "segundo": 244,
+        "latitud": 19.38368,
+        "longitud": -99.038771,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:38Z"
+    },
+    {
+        "segundo": 245,
+        "latitud": 19.38368,
+        "longitud": -99.038781,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:39Z"
+    },
+    {
+        "segundo": 246,
+        "latitud": 19.38367,
+        "longitud": -99.038793,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:40Z"
+    },
+    {
+        "segundo": 247,
+        "latitud": 19.38366,
+        "longitud": -99.038805,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:41Z"
+    },
+    {
+        "segundo": 248,
+        "latitud": 19.38365,
+        "longitud": -99.038815,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:42Z"
+    },
+    {
+        "segundo": 249,
+        "latitud": 19.38364,
+        "longitud": -99.038825,
+        "velocidad": 3.279892,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:43Z"
+    },
+    {
+        "segundo": 250,
+        "latitud": 19.38364,
+        "longitud": -99.03883,
+        "velocidad": 1.959416,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:44Z"
+    },
+    {
+        "segundo": 251,
+        "latitud": 19.38364,
+        "longitud": -99.038831,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:45Z"
+    },
+    {
+        "segundo": 252,
+        "latitud": 19.38364,
+        "longitud": -99.038835,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:46Z"
+    },
+    {
+        "segundo": 253,
+        "latitud": 19.38364,
+        "longitud": -99.038835,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:47Z"
+    },
+    {
+        "segundo": 254,
+        "latitud": 19.38363,
+        "longitud": -99.038836,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:48Z"
+    },
+    {
+        "segundo": 255,
+        "latitud": 19.38363,
+        "longitud": -99.038836,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:49Z"
+    },
+    {
+        "segundo": 256,
+        "latitud": 19.38363,
+        "longitud": -99.038838,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:50Z"
+    },
+    {
+        "segundo": 257,
+        "latitud": 19.38364,
+        "longitud": -99.03884,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:51Z"
+    },
+    {
+        "segundo": 258,
+        "latitud": 19.38364,
+        "longitud": -99.03884,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:52Z"
+    },
+    {
+        "segundo": 259,
+        "latitud": 19.38364,
+        "longitud": -99.03884,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:53Z"
+    },
+    {
+        "segundo": 260,
+        "latitud": 19.38364,
+        "longitud": -99.038836,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:54Z"
+    },
+    {
+        "segundo": 261,
+        "latitud": 19.38364,
+        "longitud": -99.038835,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:55Z"
+    },
+    {
+        "segundo": 262,
+        "latitud": 19.38363,
+        "longitud": -99.038836,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:56Z"
+    },
+    {
+        "segundo": 263,
+        "latitud": 19.38363,
+        "longitud": -99.038836,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:57Z"
+    },
+    {
+        "segundo": 264,
+        "latitud": 19.38363,
+        "longitud": -99.038838,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:58Z"
+    },
+    {
+        "segundo": 265,
+        "latitud": 19.38363,
+        "longitud": -99.038838,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:19:59Z"
+    },
+    {
+        "segundo": 266,
+        "latitud": 19.38364,
+        "longitud": -99.038838,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:00Z"
+    },
+    {
+        "segundo": 267,
+        "latitud": 19.38364,
+        "longitud": -99.038838,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:01Z"
+    },
+    {
+        "segundo": 268,
+        "latitud": 19.38363,
+        "longitud": -99.038838,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:02Z"
+    },
+    {
+        "segundo": 269,
+        "latitud": 19.38363,
+        "longitud": -99.038836,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:03Z"
+    },
+    {
+        "segundo": 270,
+        "latitud": 19.38363,
+        "longitud": -99.038838,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:04Z"
+    },
+    {
+        "segundo": 271,
+        "latitud": 19.38363,
+        "longitud": -99.038838,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:05Z"
+    },
+    {
+        "segundo": 272,
+        "latitud": 19.38363,
+        "longitud": -99.038843,
+        "velocidad": 6.069004,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:06Z"
+    },
+    {
+        "segundo": 273,
+        "latitud": 19.38362,
+        "longitud": -99.038861,
+        "velocidad": 7.730248,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:07Z"
+    },
+    {
+        "segundo": 274,
+        "latitud": 19.38361,
+        "longitud": -99.038878,
+        "velocidad": 4.55592,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:08Z"
+    },
+    {
+        "segundo": 275,
+        "latitud": 19.38361,
+        "longitud": -99.038891,
+        "velocidad": 2.998388,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:09Z"
+    },
+    {
+        "segundo": 276,
+        "latitud": 19.38342,
+        "longitud": -99.039776,
+        "velocidad": 20.023824,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:31Z"
+    },
+    {
+        "segundo": 277,
+        "latitud": 19.38341,
+        "longitud": -99.039669,
+        "velocidad": 18.266276,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:32Z"
+    },
+    {
+        "segundo": 278,
+        "latitud": 19.3834,
+        "longitud": -99.039478,
+        "velocidad": null,
+        "acelerometro": "000 000 000",
+        "datetime": "2026:03:20 13:20:33Z"
+    }
+]
