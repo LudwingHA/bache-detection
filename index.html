@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototipo - Visualizador de Baches</title>
+    <title>Prototipo - Visualizador de Baches con Imágenes</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
             background-color: #f5f5f5;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         h1 {
@@ -69,9 +69,12 @@
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #ddd;
+            vertical-align: middle;
         }
         th {
             background: #f0f0f0;
+            position: sticky;
+            top: 0;
         }
         tr:hover {
             background: #f9f9f9;
@@ -111,9 +114,11 @@
             padding: 20px;
             border: 1px solid #ddd;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            max-width: 500px;
+            max-width: 600px;
             width: 90%;
             z-index: 1000;
+            max-height: 80vh;
+            overflow-y: auto;
         }
         .modal-overlay {
             display: none;
@@ -135,7 +140,7 @@
         }
         .detail-row {
             margin: 10px 0;
-            padding: 5px;
+            padding: 8px;
             background: #f9f9f9;
         }
         .export-btn {
@@ -146,12 +151,52 @@
             border: none;
             cursor: pointer;
         }
+        .imagen-tabla {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+        .imagen-tabla:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s;
+        }
+        .imagen-modal {
+            max-width: 100%;
+            max-height: 300px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .sin-imagen {
+            color: #999;
+            font-size: 12px;
+            font-style: italic;
+        }
+        .thumbnail-container {
+            text-align: center;
+        }
+        .confianza-bar {
+            background: #4caf50;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            display: inline-block;
+        }
+        .tabla-wrapper {
+            overflow-x: auto;
+            max-height: 500px;
+            overflow-y: auto;
+        }
     </style>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
     <div class="container">
-        <h1>Prototipo - Visualizador de Baches</h1>
+        <h1>📊 Prototipo - Visualizador de Baches con Imágenes</h1>
         
         <!-- Stats simples -->
         <div class="stats" id="stats">
@@ -177,46 +222,41 @@
             <input type="text" id="searchInput" placeholder="Buscar ID o tipo...">
             <select id="filterType">
                 <option value="todos">Todos los tipos</option>
-                <option value="grieta_longitudinal">Grieta longitudinal</option>
-                <option value="grieta_longitudinal_ancha">Grieta longitudinal ancha</option>
-                <option value="grieta_transversal">Grieta transversal</option>
-                <option value="grieta_transversal_ancha">Grieta transversal ancha</option>
-                <option value="grieta_piel_cocodrilo">Grieta piel cocodrilo</option>
-                <option value="grieta_piel_cocodrilo_hundida">Grieta piel cocodrilo hundida</option>
-                <option value="bache">Bache</option>
-                <option value="bache_profundo">Bache profundo</option>
             </select>
             <button onclick="filtrarDatos()">Filtrar</button>
             <button class="reset" onclick="resetFiltros()">Limpiar</button>
             <button class="export-btn" onclick="exportarCSV()">Exportar CSV</button>
         </div>
 
-        <!-- Tabla de datos -->
-        <table id="tabla-baches">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Tipo</th>
-                    <th>Confianza</th>
-                    <th>Coordenadas</th>
-                    <th>Mapa</th>
-                    <th>Tiempo</th>
-                    <th>Detalle</th>
-                </tr>
-            </thead>
-            <tbody id="tabla-body">
-                <tr>
-                    <td colspan="7" class="loading">Cargando datos...</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Tabla de datos con imágenes -->
+        <div class="tabla-wrapper">
+            <table id="tabla-baches">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Imagen</th>
+                        <th>Tipo</th>
+                        <th>Confianza</th>
+                        <th>Coordenadas</th>
+                        <th>Mapa</th>
+                        <th>Tiempo</th>
+                        <th>Detalle</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-body">
+                    <tr>
+                        <td colspan="8" class="loading">Cargando datos...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <!-- Modal simple -->
     <div class="modal-overlay" id="modalOverlay"></div>
     <div class="modal" id="detailModal">
         <span class="modal-close" onclick="cerrarModal()">&times;</span>
-        <h3>Detalles del Bache</h3>
+        <h3>🔍 Detalles del Bache</h3>
         <div id="modal-content"></div>
     </div>
 
@@ -228,6 +268,7 @@
         let markers = [];
         let datosOriginales = null;
         let datosFiltrados = null;
+        let imagenesCache = new Map();
 
         // Cargar datos
         document.addEventListener('DOMContentLoaded', function() {
@@ -245,26 +286,56 @@
                 .then(data => {
                     datosOriginales = data;
                     datosFiltrados = data;
+                    
+                    // Formatear datos para la visualización
+                    if (datosOriginales.detecciones) {
+                        datosOriginales.detecciones.forEach(d => {
+                            d.tiempo_formato = `${Math.floor(d.segundo / 60)}:${(d.segundo % 60).toString().padStart(2, '0')}`;
+                            d.fecha_deteccion = d.timestamp || new Date().toLocaleString();
+                            // Asegurar que la ruta de la imagen es correcta
+                            if (d.captura) {
+                                d.ruta_imagen = d.captura;
+                            } else {
+                                d.ruta_imagen = null;
+                            }
+                        });
+                    }
+                    
                     actualizarStats(data);
                     inicializarMapa(data);
+                    actualizarFiltrosTipos(data);
                     actualizarTabla(data.detecciones);
                 })
                 .catch(error => {
+                    console.error('Error:', error);
                     document.getElementById('tabla-body').innerHTML = `
                         <tr>
-                            <td colspan="7" class="error">
-                                Error: ${error.message}<br>
-                                Asegúrate de que el archivo 'detecciones_baches.json' existe
+                            <td colspan="8" class="error">
+                                ❌ Error: ${error.message}<br>
+                                Asegúrate de que el archivo 'detecciones_baches.json' existe en la misma carpeta
                             </td>
                         </tr>
                     `;
                 });
         }
 
+        function actualizarFiltrosTipos(data) {
+            if (!data.detecciones) return;
+            
+            const tipos = [...new Set(data.detecciones.map(d => d.clase))];
+            const filterSelect = document.getElementById('filterType');
+            filterSelect.innerHTML = '<option value="todos">Todos los tipos</option>';
+            
+            tipos.forEach(tipo => {
+                const nombreMostrar = tipo.replace(/_/g, ' ');
+                filterSelect.innerHTML += `<option value="${tipo}">${nombreMostrar}</option>`;
+            });
+        }
+
         function actualizarStats(data) {
-            document.getElementById('total-baches').textContent = data.total_baches_unicos || 0;
-            document.getElementById('fecha-procesamiento').textContent = data.fecha_procesamiento || '-';
-            document.getElementById('video-procesado').textContent = data.video_procesado || '-';
+            document.getElementById('total-baches').textContent = data.total_baches_unicos || data.detecciones?.length || 0;
+            document.getElementById('fecha-procesamiento').textContent = data.fecha_procesamiento || data.fecha_procesamiento || '-';
+            document.getElementById('video-procesado').textContent = data.video || data.video_procesado || '-';
         }
 
         function inicializarMapa(data) {
@@ -274,25 +345,30 @@
             let centerLon = -99.1332;
             
             if (data.detecciones && data.detecciones.length > 0) {
-                const lats = data.detecciones.map(d => d.lat);
-                const lons = data.detecciones.map(d => d.lon);
+                const lats = data.detecciones.map(d => d.latitud);
+                const lons = data.detecciones.map(d => d.longitud);
                 centerLat = lats.reduce((a, b) => a + b, 0) / lats.length;
                 centerLon = lons.reduce((a, b) => a + b, 0) / lons.length;
             }
 
             map = L.map('map').setView([centerLat, centerLon], 14);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
 
             markers.forEach(m => map.removeLayer(m));
             markers = [];
 
             if (data.detecciones) {
                 data.detecciones.forEach(d => {
-                    const marker = L.marker([d.lat, d.lon]).addTo(map);
+                    const marker = L.marker([d.latitud, d.longitud]).addTo(map);
+                    const nombreMostrar = d.clase.replace(/_/g, ' ');
                     marker.bindPopup(`
-                        <b>ID ${d.id}:</b> ${d.clase}<br>
-                        Conf: ${(d.confianza * 100).toFixed(1)}%<br>
-                        <a href="${d.google_maps}" target="_blank">Google Maps</a>
+                        <b>Bache #${d.id}</b><br>
+                        <b>Tipo:</b> ${nombreMostrar}<br>
+                        <b>Confianza:</b> ${(d.confianza * 100).toFixed(1)}%<br>
+                        ${d.captura ? `<img src="${d.captura}" style="max-width: 150px; max-height: 100px; margin-top: 5px;" onerror="this.style.display='none'">` : ''}<br>
+                        <a href="${d.google_maps}" target="_blank">Abrir en Google Maps</a>
                     `);
                     markers.push(marker);
                 });
@@ -303,7 +379,7 @@
             const tbody = document.getElementById('tabla-body');
             
             if (!detecciones || detecciones.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center;">No hay datos</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center;">📭 No hay datos que coincidan con los filtros</td></tr>';
                 return;
             }
 
@@ -311,16 +387,32 @@
             detecciones.forEach(d => {
                 // Formatear el nombre para mostrarlo más legible
                 let nombreMostrar = d.clase.replace(/_/g, ' ');
+                let confianzaPorcentaje = (d.confianza * 100).toFixed(1);
+                
+                // Determinar color de confianza
+                let confianzaColor = '#4caf50';
+                if (d.confianza < 0.5) confianzaColor = '#ff9800';
+                if (d.confianza < 0.3) confianzaColor = '#f44336';
                 
                 html += `
                     <tr>
-                        <td>${d.id}</td>
+                        <td><strong>${d.id}</strong></td>
+                        <td class="thumbnail-container">
+                            ${d.captura ? 
+                                `<img src="${d.captura}" 
+                                    class="imagen-tabla" 
+                                    alt="Bache ${d.id}"
+                                    onclick="verImagenGrande('${d.captura}', ${d.id})"
+                                    onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'sin-imagen\\'>📷 Sin imagen</div>';">` : 
+                                '<div class="sin-imagen">📷 Sin imagen</div>'
+                            }
+                        </td>
                         <td><span class="badge">${nombreMostrar}</span></td>
-                        <td>${(d.confianza * 100).toFixed(1)}%</td>
-                        <td>${d.lat.toFixed(4)}, ${d.lon.toFixed(4)}</td>
-                        <td><a href="${d.google_maps}" target="_blank" class="btn-link">Ver</a></td>
-                        <td>${d.tiempo_formato}</td>
-                        <td><button onclick="verDetalle(${d.id})" style="cursor: pointer;">Ver</button></td>
+                        <td><span class="confianza-bar" style="background: ${confianzaColor};">${confianzaPorcentaje}%</span></td>
+                        <td>${d.latitud.toFixed(5)}<br>${d.longitud.toFixed(5)}</td>
+                        <td><a href="${d.google_maps}" target="_blank" class="btn-link">📍 Ver mapa</a></td>
+                        <td>${d.tiempo_formato || d.segundo + 's'}</td>
+                        <td><button onclick="verDetalle(${d.id})" style="cursor: pointer; padding: 5px 10px;">🔍 Ver</button></td>
                     </tr>
                 `;
             });
@@ -333,7 +425,7 @@
             const filterType = document.getElementById('filterType').value;
 
             let filtradas = datosOriginales.detecciones.filter(d => {
-                if (filterType !== 'todos' && !d.clase.includes(filterType)) {
+                if (filterType !== 'todos' && d.clase !== filterType) {
                     return false;
                 }
                 if (searchTerm) {
@@ -346,6 +438,9 @@
             datosFiltrados = {...datosOriginales, detecciones: filtradas};
             actualizarTabla(filtradas);
             actualizarMarcadores(filtradas);
+            
+            // Actualizar contador
+            document.getElementById('total-baches').textContent = filtradas.length;
         }
 
         function resetFiltros() {
@@ -354,6 +449,7 @@
             datosFiltrados = datosOriginales;
             actualizarTabla(datosOriginales.detecciones);
             actualizarMarcadores(datosOriginales.detecciones);
+            document.getElementById('total-baches').textContent = datosOriginales.total_baches_unicos || datosOriginales.detecciones.length;
         }
 
         function actualizarMarcadores(detecciones) {
@@ -361,27 +457,63 @@
             markers = [];
 
             detecciones.forEach(d => {
-                const marker = L.marker([d.lat, d.lon]).addTo(map);
-                marker.bindPopup(`ID ${d.id}: ${d.clase}`);
+                const marker = L.marker([d.latitud, d.longitud]).addTo(map);
+                const nombreMostrar = d.clase.replace(/_/g, ' ');
+                marker.bindPopup(`
+                    <b>Bache #${d.id}</b><br>
+                    <b>Tipo:</b> ${nombreMostrar}<br>
+                    <b>Confianza:</b> ${(d.confianza * 100).toFixed(1)}%<br>
+                    ${d.captura ? `<img src="${d.captura}" style="max-width: 150px; max-height: 100px; margin-top: 5px;" onerror="this.style.display='none'">` : ''}
+                `);
                 markers.push(marker);
             });
+        }
+
+        function verImagenGrande(ruta, id) {
+            const content = document.getElementById('modal-content');
+            content.innerHTML = `
+                <div style="text-align: center;">
+                    <h4>Bache #${id}</h4>
+                    <img src="${ruta}" class="imagen-modal" alt="Bache ${id}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'error\\'>❌ No se pudo cargar la imagen</div>'">
+                    <p><small>Haz clic fuera para cerrar</small></p>
+                </div>
+            `;
+            
+            document.getElementById('detailModal').style.display = 'block';
+            document.getElementById('modalOverlay').style.display = 'block';
         }
 
         function verDetalle(id) {
             const detalle = datosFiltrados.detecciones.find(d => d.id === id);
             
             if (detalle) {
+                const nombreMostrar = detalle.clase.replace(/_/g, ' ');
+                const confianzaPorcentaje = (detalle.confianza * 100).toFixed(1);
+                
+                let confianzaColor = '#4caf50';
+                if (detalle.confianza < 0.5) confianzaColor = '#ff9800';
+                if (detalle.confianza < 0.3) confianzaColor = '#f44336';
+                
                 const content = document.getElementById('modal-content');
                 content.innerHTML = `
-                    <div class="detail-row"><strong>ID:</strong> ${detalle.id}</div>
-                    <div class="detail-row"><strong>Tipo:</strong> ${detalle.clase.replace(/_/g, ' ')}</div>
-                    <div class="detail-row"><strong>Confianza:</strong> ${(detalle.confianza * 100).toFixed(1)}%</div>
-                    <div class="detail-row"><strong>Latitud:</strong> ${detalle.lat}</div>
-                    <div class="detail-row"><strong>Longitud:</strong> ${detalle.lon}</div>
-                    <div class="detail-row"><strong>Frame:</strong> ${detalle.frame}</div>
-                    <div class="detail-row"><strong>Tiempo:</strong> ${detalle.tiempo_formato}</div>
-                    <div class="detail-row"><strong>Fecha:</strong> ${detalle.fecha_deteccion}</div>
-                    <div class="detail-row"><a href="${detalle.google_maps}" target="_blank">Abrir en Google Maps</a></div>
+                    ${detalle.captura ? `
+                        <div style="text-align: center; margin-bottom: 15px;">
+                            <img src="${detalle.captura}" class="imagen-modal" alt="Bache ${detalle.id}" 
+                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'error\\'>❌ Imagen no disponible</div>'">
+                        </div>
+                    ` : '<div class="sin-imagen" style="text-align: center;">📷 No hay imagen disponible para este bache</div>'}
+                    
+                    <div class="detail-row"><strong>🔢 ID:</strong> ${detalle.id}</div>
+                    <div class="detail-row"><strong>🚧 Tipo:</strong> <span class="badge">${nombreMostrar}</span></div>
+                    <div class="detail-row"><strong>🎯 Confianza:</strong> <span class="confianza-bar" style="background: ${confianzaColor};">${confianzaPorcentaje}%</span></div>
+                    <div class="detail-row"><strong>📍 Latitud:</strong> ${detalle.latitud}</div>
+                    <div class="detail-row"><strong>📍 Longitud:</strong> ${detalle.longitud}</div>
+                    <div class="detail-row"><strong>🎬 Frame:</strong> ${detalle.frame || 'N/A'}</div>
+                    <div class="detail-row"><strong>⏱️ Segundo:</strong> ${detalle.segundo}s (${detalle.tiempo_formato})</div>
+                    <div class="detail-row"><strong>⚡ Velocidad:</strong> ${detalle.velocidad_kmh ? detalle.velocidad_kmh + ' km/h' : 'N/A'}</div>
+                    <div class="detail-row"><strong>📅 Fecha:</strong> ${detalle.fecha_deteccion || detalle.timestamp || 'N/A'}</div>
+                    <div class="detail-row"><strong>🗺️ Google Maps:</strong> <a href="${detalle.google_maps}" target="_blank">Abrir en Google Maps</a></div>
+                    ${detalle.acelerometro ? `<div class="detail-row"><strong>📱 Acelerómetro:</strong> ${detalle.acelerometro}</div>` : ''}
                 `;
                 
                 document.getElementById('detailModal').style.display = 'block';
@@ -397,24 +529,40 @@
         function exportarCSV() {
             if (!datosFiltrados || !datosFiltrados.detecciones) return;
             
-            const headers = ['ID', 'Tipo', 'Confianza', 'Latitud', 'Longitud', 'Tiempo'];
+            const headers = ['ID', 'Tipo', 'Confianza', 'Latitud', 'Longitud', 'Segundo', 'Velocidad_kmh', 'Google_Maps'];
             const rows = datosFiltrados.detecciones.map(d => [
                 d.id,
                 d.clase,
                 d.confianza,
-                d.lat,
-                d.lon,
-                d.tiempo_formato
+                d.latitud,
+                d.longitud,
+                d.segundo,
+                d.velocidad_kmh || '',
+                d.google_maps
             ]);
 
-            let csv = headers.join(',') + '\n' + rows.map(row => row.join(',')).join('\n');
+            let csv = headers.join(',') + '\n' + rows.map(row => row.map(cell => `"${cell}"`).join(',')).join('\n');
             
-            const blob = new Blob([csv], { type: 'text/csv' });
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
             const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'baches.csv';
+            const url = URL.createObjectURL(blob);
+            link.href = url;
+            link.setAttribute('download', 'baches_detectados.csv');
+            document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
         }
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('modalOverlay').addEventListener('click', cerrarModal);
+        
+        // Soporte para tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                cerrarModal();
+            }
+        });
     </script>
 </body>
 </html>

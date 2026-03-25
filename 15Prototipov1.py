@@ -17,6 +17,7 @@ MODEL_PATH = "./best.pt"
 VIDEO_PATH = "./videos-m/test7.MOV"
 OUTPUT_PATH = "output_con_metadatos.MOV"
 JSON_PATH = "detecciones_baches.json"
+CAPTURAS_DIR = "detecciones_baches"
 
 CLASES_ESPAÑOL = {
     "longitudinal_crack": "grieta_longitudinal",
@@ -109,39 +110,112 @@ def generar_enlace_google_maps(lat: float, lon: float) -> str:
 
 def es_mismo_bache(lat1: float, lon1: float, lat2: float, lon2: float) -> bool:
     return abs(lat1 - lat2) < UMBRAL_DISTANCIA_GPS and abs(lon1 - lon2) < UMBRAL_DISTANCIA_GPS
+
+def guardar_captura_bache(frame, bbox, clase, confianza, bache_id, gps_info, segundo):
+    """Guarda una captura del bache con rectángulo y overlay de información mejorado"""
+    # Crear directorio si no existe
+    if not os.path.exists(CAPTURAS_DIR):
+        os.makedirs(CAPTURAS_DIR)
+    
+
+    img_captura = frame.copy()
+    
+
+    x1, y1, x2, y2 = bbox
+    cv2.rectangle(img_captura, (x1, y1), (x2, y2), (0, 255, 0), 4)
+    
+
+    panel_height = 380
+    panel_width = 1000
+    
+
+    overlay = img_captura.copy()
+    cv2.rectangle(overlay, (10, 10), (10 + panel_width, 10 + panel_height), (0, 0, 0), -1)
+    img_captura = cv2.addWeighted(overlay, 1.0, img_captura, 0.15, 0)
+    
+    
+    y_offset = 53
+    cv2.putText(img_captura, "BACHE DETECTADO", (20, y_offset), 
+                cv2.FONT_HERSHEY_SIMPLEX, 1.8, (0, 255, 255), 2)
+    
+
+    y_offset += 53
+    cv2.putText(img_captura, f"TIPO: {clase.upper()}", (20, y_offset), 
+                cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 255, 0), 3)
+    
+
+    y_offset += 53
+    cv2.putText(img_captura, f"GPS: {gps_info['latitud']:.6f}, {gps_info['longitud']:.6f}", (20, y_offset), 
+                cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 3)
+    
+
+    y_offset += 45
+    if gps_info.get('velocidad'):
+        cv2.putText(img_captura, f"VELOCIDAD: {gps_info['velocidad']:.1f} km/h", (20, y_offset), 
+                    cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 2)
+    else:
+        cv2.putText(img_captura, f"VELOCIDAD: No disponible", (20, y_offset), 
+                    cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 2)
+    
+
+    y_offset += 45
+    cv2.putText(img_captura, f"SEGUNDO: {segundo}", (20, y_offset), 
+                cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 2)
+
+
+    y_offset += 45
+    fecha_hora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    cv2.putText(img_captura, f"{fecha_hora}", (20, y_offset), 
+                cv2.FONT_HERSHEY_SIMPLEX, 1.5, (200, 200, 200), 3)
+    
+
+    height, width = img_captura.shape[:2]
+
+    target_width = 1024
+    target_height = 768
+    
+    if width > target_width or height > target_height:
+        scale = min(target_width / width, target_height / height)
+        new_width = int(width * scale)
+        new_height = int(height * scale)
+        img_captura = cv2.resize(img_captura, (new_width, new_height))
+    
+
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"{CAPTURAS_DIR}/bache_{bache_id:03d}_{clase}_{timestamp}.jpg"
+    
+
+    cv2.imwrite(filename, img_captura, [cv2.IMWRITE_JPEG_QUALITY, 90])
+    
+    return filename
+
 def dibujar_overlay(frame, total_baches, lat, lon, velocidad, acelerometro, fps_procesamiento):
     """Dibuja overlay de información con texto más grande y visible"""
     overlay = frame.copy()
     
-
     cv2.rectangle(overlay, (10, 10), (950, 280), (0, 0, 0), -1)
     frame = cv2.addWeighted(overlay, 1.0, frame, 0.0, 0)
     
-
     cv2.rectangle(frame, (10, 10), (950, 280), (0, 255, 255), 2)
     
-
-
     cv2.putText(frame, f"BACHES DETECTADOS: {total_baches}", 
-                (20, 100), cv2.FONT_HERSHEY_SIMPLEX, 2.2, (255, 255, 255), 2)
+                (20, 100), cv2.FONT_HERSHEY_SIMPLEX, 2.2, (255, 255, 255), 3)
     
-
     if lat and lon:
         cv2.putText(frame, f"GPS: {lat:.6f}, {lon:.6f}", 
                     (20, 165), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 2)
     
-
     if velocidad:
         cv2.putText(frame, f"VELOCIDAD: {velocidad:.1f} km/h", 
                     (20, 225), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 2)
     
     return frame
+
 def procesar_video():
     print("\n" + "="*50)
     print("DETECTOR DE BACHES - OPTIMIZADO PARA MACBOOK AIR")
     print("="*50)
     
-
     if not os.path.exists(MODEL_PATH):
         print(f"Error: No se encuentra el modelo en {MODEL_PATH}")
         return
@@ -150,27 +224,20 @@ def procesar_video():
         print(f"Error: No se encuentra el video en {VIDEO_PATH}")
         return
     
-
     exif_extractor = OptimizedExifExtractor(VIDEO_PATH)
     usar_simulacion = len(exif_extractor.gps_data) == 0
     
-
     print("\nCargando modelo YOLO...")
-
     model = YOLO(MODEL_PATH)
-
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     model.to(device)
-    print(f"Utilizando device, {device}")
-    print("Modelo cargado (modo CPU)")
+    print(f"Utilizando device: {device}")
     
-
     cap = cv2.VideoCapture(VIDEO_PATH)
     if not cap.isOpened():
         print(f"Error: No se puede abrir el video")
         return
     
-
     width = int(cap.get(3))
     height = int(cap.get(4))
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -182,10 +249,8 @@ def procesar_video():
     print(f"   FPS: {fps:.2f}")
     print(f"   Duración: {duracion_seg:.1f} segundos")
     
-
     target_width = 1280
     target_height = 720
-
     
     if width > target_width:
         scale_x = target_width / width
@@ -194,7 +259,6 @@ def procesar_video():
     else:
         target_width, target_height = width, height
     
-
     out = cv2.VideoWriter(
         OUTPUT_PATH,
         cv2.VideoWriter_fourcc(*"mp4v"),
@@ -202,15 +266,13 @@ def procesar_video():
         (target_width, target_height)
     )
     
-
     baches_detectados = {}
     detecciones_json = []
     frame_num = 0
     last_gps_second = -1
     current_gps_info = None
     
-
-    frame_skip = 4  
+    frame_skip = 1
     detection_counter = 0
     
     print("\nProcesando video........")
@@ -226,8 +288,8 @@ def procesar_video():
             break
         
         frame_num += 1
+        tiempo_actual = frame_num / fps
         
-
         segundo_actual = int(frame_num / fps)
         
         if segundo_actual != last_gps_second:
@@ -250,87 +312,103 @@ def procesar_video():
         else:
             frame_resized = frame
         
-
         detection_counter += 1
-        if detection_counter >= frame_skip:
-            detection_counter = 0
+        # if detection_counter >= frame_skip:
+        #     detection_counter = 0
             
-            if current_gps_info and current_gps_info.get('latitud'):
-                try:
-                    results = model(frame_resized, conf=0.2, verbose=False, device='mps')
-                    
-                    if results[0].boxes is not None and len(results[0].boxes) > 0:
-                        boxes = results[0].boxes
-                        
-                        for box in boxes:
-                            x1, y1, x2, y2 = map(int, box.xyxy[0])
-                            conf = float(box.conf[0])
-                            cls = int(box.cls[0])
-                            
-                            nombre_ingles = model.names[cls]
-                            nombre_espanol = CLASES_ESPAÑOL.get(nombre_ingles, nombre_ingles)
-                            
-                            bache_id = f"{current_gps_info['latitud']:.5f}_{current_gps_info['longitud']:.5f}"
-                            
-                            if bache_id not in baches_detectados:
-
-                                bache_cercano = False
-                                for existing_id, existing_info in baches_detectados.items():
-                                    if es_mismo_bache(current_gps_info['latitud'], current_gps_info['longitud'],
-                                                    existing_info['lat'], existing_info['lon']):
-                                        bache_cercano = True
-                                        break
-                                
-                                if not bache_cercano:
-                                    google_maps_link = generar_enlace_google_maps(
-                                        current_gps_info['latitud'], 
-                                        current_gps_info['longitud']
-                                    )
-                                    
-                                    deteccion = {
-                                        "id": len(baches_detectados) + 1,
-                                        "clase": nombre_espanol,
-                                        "confianza": round(conf, 3),
-                                        "latitud": current_gps_info['latitud'],
-                                        "longitud": current_gps_info['longitud'],
-                                        "velocidad_kmh": current_gps_info.get('velocidad'),
-                                        "acelerometro": current_gps_info.get('acelerometro', '000 000 000'),
-                                        "google_maps": google_maps_link,
-                                        "segundo": segundo_actual,
-                                        "frame": frame_num,
-                                        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                                    }
-                                    
-                                    detecciones_json.append(deteccion)
-                                    
-                                    baches_detectados[bache_id] = {
-                                        'lat': current_gps_info['latitud'],
-                                        'lon': current_gps_info['longitud'],
-                                        'clase': nombre_espanol,
-                                        'segundo': segundo_actual
-                                    }
-                                    
-                                    print(f"\n[BACHE] #{len(baches_detectados)}: {nombre_espanol}")
-                                    print(f"   GPS: {current_gps_info['latitud']:.5f}, {current_gps_info['longitud']:.5f}")
-                                    if current_gps_info.get('velocidad'):
-                                        print(f"   Velocidad: {current_gps_info['velocidad']:.1f} km/h")
-                            
-                            # Dibujar bounding box (escalar coordenadas)
-                            if width != target_width:
-                                x1 = int(x1 * (width / target_width))
-                                x2 = int(x2 * (width / target_width))
-                                y1 = int(y1 * (height / target_height))
-                                y2 = int(y2 * (height / target_height))
-                            
-                            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                            cv2.putText(frame, f"[DETECTADO] {nombre_espanol}", 
-                                      (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 2.5, (0, 255, 0), 2)
+        if current_gps_info and current_gps_info.get('latitud'):
+            try:
+                results = model.track(frame_resized, conf=0.2, verbose=False, device='mps', vid_stride=2)
                 
-                except Exception as e:
+                if results[0].boxes is not None and len(results[0].boxes) > 0:
+                    boxes = results[0].boxes
+                    
+                    for box in boxes:
+                        x1, y1, x2, y2 = map(int, box.xyxy[0])
+                        conf = float(box.conf[0])
+                        cls = int(box.cls[0])
+                        
+                        nombre_ingles = model.names[cls]
+                        nombre_espanol = CLASES_ESPAÑOL.get(nombre_ingles, nombre_ingles)
+                        
+                        bache_id = f"{current_gps_info['latitud']:.5f}_{current_gps_info['longitud']:.5f}"
+                        
+                        if bache_id not in baches_detectados:
+                            bache_cercano = False
+                            for existing_id, existing_info in baches_detectados.items():
+                                if es_mismo_bache(current_gps_info['latitud'], current_gps_info['longitud'],
+                                                existing_info['lat'], existing_info['lon']):
+                                    bache_cercano = True
+                                    break
+                            
+                            if not bache_cercano:
 
-                    pass
+                                x1_orig = int(x1 * (width / target_width))
+                                x2_orig = int(x2 * (width / target_width))
+                                y1_orig = int(y1 * (height / target_height))
+                                y2_orig = int(y2 * (height / target_height))
+                                
+
+                                captura_path = guardar_captura_bache(
+                                    frame, (x1_orig, y1_orig, x2_orig, y2_orig),
+                                    nombre_espanol, conf, len(baches_detectados) + 1,
+                                    current_gps_info, segundo_actual
+                                )
+                                
+                                google_maps_link = generar_enlace_google_maps(
+                                    current_gps_info['latitud'], 
+                                    current_gps_info['longitud']
+                                )
+                                
+                                deteccion = {
+                                    "id": len(baches_detectados) + 1,
+                                    "clase": nombre_espanol,
+                                    "confianza": round(conf, 3),
+                                    "latitud": current_gps_info['latitud'],
+                                    "longitud": current_gps_info['longitud'],
+                                    "velocidad_kmh": current_gps_info.get('velocidad'),
+                                    "acelerometro": current_gps_info.get('acelerometro', '000 000 000'),
+                                    "google_maps": google_maps_link,
+                                    "segundo": segundo_actual,
+                                    "frame": frame_num,
+                                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                                    "captura": captura_path
+                                }
+                                
+                                detecciones_json.append(deteccion)
+                                
+                                baches_detectados[bache_id] = {
+                                    'lat': current_gps_info['latitud'],
+                                    'lon': current_gps_info['longitud'],
+                                    'clase': nombre_espanol,
+                                    'segundo': segundo_actual,
+                                    'captura': captura_path
+                                }
+                                
+                                print(f"\n[BACHE] #{len(baches_detectados)}: {nombre_espanol}")
+                                print(f"   GPS: {current_gps_info['latitud']:.5f}, {current_gps_info['longitud']:.5f}")
+                                print(f"   Captura guardada: {captura_path}")
+                                if current_gps_info.get('velocidad'):
+                                    print(f"   Velocidad: {current_gps_info['velocidad']:.1f} km/h")
+                        
+
+                        if width != target_width:
+                            x1 = int(x1 * (width / target_width))
+                            x2 = int(x2 * (width / target_width))
+                            y1 = int(y1 * (height / target_height))
+                            y2 = int(y2 * (height / target_height))
+                        
+                        cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 3)
+                        # Texto más grande y con fondo
+                        label = f"[DETECTADO]: {nombre_espanol})"
+                        label_size = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 1.0, 2)[0]
+                        cv2.rectangle(frame, (x1, y1 - 35), (x1 + label_size[0] + 10, y1), (0, 255, 0), -1)
+                        cv2.putText(frame, label, (x1 + 5, y1 - 10), 
+                                    cv2.FONT_HERSHEY_SIMPLEX, 1.7, (0, 0, 0), 2)
+            
+            except Exception as e:
+                pass
         
-
         frames_processed += 1
         current_time = time.time()
         elapsed = current_time - last_fps_time
@@ -340,7 +418,6 @@ def procesar_video():
             frames_processed = 0
             last_fps_time = current_time
         
-
         frame = dibujar_overlay(
             frame,
             len(baches_detectados),
@@ -351,7 +428,6 @@ def procesar_video():
             proc_fps if 'proc_fps' in locals() else None
         )
         
-
         if width != target_width:
             frame_out = cv2.resize(frame, (target_width, target_height))
         else:
@@ -359,7 +435,6 @@ def procesar_video():
         
         out.write(frame_out)
         
-
         display_frame = cv2.resize(frame, (960, 540))
         cv2.imshow("Deteccion Baches - MacBook Air", display_frame)
         
@@ -367,12 +442,10 @@ def procesar_video():
             print("\nProcesamiento detenido")
             break
     
-    # Limpiar
     cap.release()
     out.release()
     cv2.destroyAllWindows()
     
-    # Guardar resultados
     print("\n\n" + "="*50)
     print("GUARDANDO RESULTADOS")
     print("="*50)
@@ -399,10 +472,10 @@ def procesar_video():
     print(f"\n Resultados guardados:")
     print(f"   JSON: {JSON_PATH}")
     print(f"   Video: {OUTPUT_PATH}")
+    print(f"   Capturas: {CAPTURAS_DIR}/")
     print(f"\n RESUMEN FINAL:")
     print(f"   Total baches únicos: {len(baches_detectados)}")
     
-
     if detecciones_json:
         clases = [d['clase'] for d in detecciones_json]
         from collections import Counter
